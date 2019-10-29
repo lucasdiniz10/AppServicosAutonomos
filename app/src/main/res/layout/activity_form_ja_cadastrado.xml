@@ -43,7 +43,7 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/Button"
+        android:background="@drawable/button"
         android:fontFamily="@font/bold"
         android:shadowRadius="12"
         android:text="Login"
@@ -84,7 +84,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.158"
-        app:srcCompat="@drawable/ServicosAutonomosLogo1" />
+        app:srcCompat="@drawable/servicosautonomoslogo1" />
 
     <Button
         android:id="@+id/buttonEsqueceuSenha"
