@@ -17,25 +17,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/servicosautonomoslogo" />
 
-    <ImageView
-        android:id="@+id/imgLogoBG1"
-        android:layout_width="wrap_content"
-        android:layout_height="233dp"
-        android:layout_marginEnd="288dp"
-        android:layout_marginRight="288dp"
-        android:layout_marginBottom="532dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/servicosautonomoslogo2" />
-
-    <ImageView
-        android:id="@+id/imgLogoBG2"
-        android:layout_width="232dp"
-        android:layout_height="233dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginLeft="284dp"
-        android:layout_marginTop="536dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/servicosautonomoslogo2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
