@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class formCadastroContratante extends AppCompatActivity {
+public class FormCadastroContratante extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
