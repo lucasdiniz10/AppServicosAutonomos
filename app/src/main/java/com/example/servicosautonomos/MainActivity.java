@@ -7,31 +7,26 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
 
-    private static int SPLASH_TIME_OUT = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_escolher_categoria);new Handler().postDelayed(new Runnable() {
-            /*
-             * Exibindo splash com um timer.
-             */
+        setContentView(R.layout.activity_main);
+
+        Handler handle = new Handler();
+        handle.postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Esse método será executado sempre que o timer acabar
-                // E inicia a activity principal
-                Intent i = new Intent(MainActivity.this,
-                        Escolha.class);
-                startActivity(i);
-
-                // Fecha esta activity
-                finish();
+                mostrarLogin();
             }
-        }, SPLASH_TIME_OUT);
+        }, 2000);
     }
 
-
-
+    private void mostrarLogin() {
+        Intent intent = new Intent(MainActivity.this, Escolha.class);
+        startActivity(intent);
+        finish();
+    }
 }
