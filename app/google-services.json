@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "167438747033",
+    "firebase_url": "https://appservicosautonomos-f6137.firebaseio.com",
+    "project_id": "appservicosautonomos-f6137",
+    "storage_bucket": "appservicosautonomos-f6137.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167438747033:android:b06ce4ac9aee97c9343f08",
+        "android_client_info": {
+          "package_name": "com.example.servicosautonomos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167438747033-gkuq66vsnjbdlmddatlv2jk8vdu9q1ns.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.servicosautonomos",
+            "certificate_hash": "e7df1ac916ef04cdd2514b65282354225e35b61c"
+          }
+        },
+        {
+          "client_id": "167438747033-7pfeh2agrf047msggq8d0hujvnfaapc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqasnqHxoYkFEcCQrkr-hN7f99Q1wc5oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167438747033-7pfeh2agrf047msggq8d0hujvnfaapc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
