@@ -11,7 +11,7 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
+        android:background="@drawable/selector_button"
         android:fontFamily="@font/bold"
         android:text="Cadastrar Serviço"
         android:textAlignment="center"
@@ -26,14 +26,14 @@
         app:layout_constraintVertical_bias="0.579" />
 
     <Button
-        android:id="@+id/buttonCadastrarProfissional"
+        android:id="@+id/buttonContratarProfissional"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
+        android:background="@drawable/selector_button"
         android:fontFamily="@font/bold"
         android:shadowRadius="12"
-        android:text="Cadastrar Profissional"
+        android:text="Contratar Profissional"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
