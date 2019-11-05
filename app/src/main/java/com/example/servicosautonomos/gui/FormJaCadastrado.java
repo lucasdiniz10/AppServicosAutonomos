@@ -32,7 +32,7 @@ public class FormJaCadastrado extends AppCompatActivity {
         final String senha = editTextSenha.getText().toString();
 
         this.buttonLogin = findViewById(R.id.buttonLogin);
-
+      /*
         //acessando o firebase para listar
         FirebaseApp.initializeApp(FormJaCadastrado.this);
         FirebaseDatabase bd = FirebaseDatabase.getInstance();
@@ -83,4 +83,3 @@ public class FormJaCadastrado extends AppCompatActivity {
 
 
 }
-
