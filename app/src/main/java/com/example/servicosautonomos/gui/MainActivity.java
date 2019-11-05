@@ -1,11 +1,12 @@
-package com.example.servicosautonomos;
+package com.example.servicosautonomos.gui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
+
+import com.example.servicosautonomos.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormJaCadastrado">
+    tools:context=".gui.FormJaCadastrado">
 
     <EditText
         android:id="@+id/editTextLogin"
@@ -13,8 +13,8 @@
         android:ems="10"
         android:fontFamily="@font/regular"
         android:inputType="textPersonName"
-        android:text="Login"
-        android:textColor="#CECECE"
+        android:hint="Login"
+        android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,8 +29,8 @@
         android:ems="10"
         android:fontFamily="@font/regular"
         android:inputType="textPersonName"
-        android:text="Senha"
-        android:textColor="#CECECE"
+        android:hint="Senha"
+        android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
+        android:background="@drawable/selector_button"
         android:fontFamily="@font/bold"
         android:shadowRadius="12"
         android:text="Login"

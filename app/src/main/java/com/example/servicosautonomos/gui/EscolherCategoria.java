@@ -1,4 +1,4 @@
-package com.example.servicosautonomos;
+package com.example.servicosautonomos.gui;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,10 +1,12 @@
-package com.example.servicosautonomos;
+package com.example.servicosautonomos.gui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.servicosautonomos.R;
 
 public class Escolha extends AppCompatActivity {
     Button button;
