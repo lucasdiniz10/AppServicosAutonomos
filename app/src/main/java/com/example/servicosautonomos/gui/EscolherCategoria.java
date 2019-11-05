@@ -1,8 +1,10 @@
 package com.example.servicosautonomos.gui;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.example.servicosautonomos.R;
 
 public class EscolherCategoria extends AppCompatActivity {
 
