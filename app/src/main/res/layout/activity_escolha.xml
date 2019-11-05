@@ -91,10 +91,11 @@
     <Button
         android:id="@+id/buttonJaCadastrado"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="211dp"
+        android:layout_height="54dp"
         android:fontFamily="@font/bold"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="Já Sou Cadastrado."
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#3A6A75"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,6 +103,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897"
-        tools:text="Já Sou Cadastrado." />
+        app:layout_constraintVertical_bias="0.897" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
