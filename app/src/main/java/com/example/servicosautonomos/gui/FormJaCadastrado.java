@@ -25,14 +25,9 @@ public class FormJaCadastrado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_ja_cadastrado);
 
-        this.editTextLogin = findViewById(R.id.editTextLogin);
-        this.editTextSenha = findViewById(R.id.editTextSenha);
-
-        final String email = editTextLogin.getText().toString();
-        final String senha = editTextSenha.getText().toString();
 
         this.buttonLogin = findViewById(R.id.buttonLogin);
-      /*
+
         //acessando o firebase para listar
         FirebaseApp.initializeApp(FormJaCadastrado.this);
         FirebaseDatabase bd = FirebaseDatabase.getInstance();
@@ -65,7 +60,14 @@ public class FormJaCadastrado extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Usuario usuario = new Usuario(email, senha);
+                this.editTextLogin = findViewById(R.id.editTextLogin);
+                this.editTextSenha = findViewById(R.id.editTextSenha);
+
+                final String email = editTextLogin.getText().toString();
+                final String senha = editTextSenha.getText().toString();
+
+
+                Usuario usuario = new Usuario();
 
                 usuario.email = editTextLogin.getText().toString();
                 usuario.senha = editTextSenha.getText().toString();
