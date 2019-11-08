@@ -36,14 +36,14 @@
                 android:textAlignment="center"
                 android:textColor="#73B650"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseCategoria"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewSelecionarCategoria2" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewSelecionarSubCategoriaAssistenciaTecnica" />
 
             <TextView
-                android:id="@+id/textViewSelecionarCategoria2"
+                android:id="@+id/textViewSelecionarSubCategoriaAssistenciaTecnica"
                 android:layout_width="248dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="16dp"
@@ -60,7 +60,7 @@
                 app:layout_constraintVertical_bias="0.271" />
 
             <ImageView
-                android:id="@+id/imageViewBaseCategoria"
+                android:id="@+id/imageViewBaseSubCategoria"
                 android:layout_width="408dp"
                 android:layout_height="178dp"
                 android:layout_marginStart="8dp"
@@ -68,44 +68,44 @@
                 android:layout_marginTop="130dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseCategoria2"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewAssistenciaTecnica"
+                android:id="@+id/textViewAparelhosEletronicos "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
                 android:text="Assistência Técnica"
                 android:textColor="#4C4C4C"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAssistenciaTecnica"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAparelhosEletronicos "
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoAssistenciaTecnica"
+                android:id="@+id/textViewDescricaoAparelhosEletronicos "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:text="Eletrodomésticos, Eletrônicos, Etc."
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintHorizontal_bias="0.3"
-                app:layout_constraintStart_toStartOf="@+id/imageViewBaseCategoria"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.36" />
 
             <Button
-                android:id="@+id/buttonEscolherCategoriaAssistenciaTecnica"
+                android:id="@+id/buttonEscolherSubCategoriatextViewDescricaoAparelhosEletronicos "
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,14 +118,14 @@
                 android:textColor="#4C4C4C"
                 android:textSize="15sp"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria"
-                app:layout_constraintStart_toStartOf="@+id/imageViewBaseCategoria"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.7" />
 
             <ImageView
-                android:id="@+id/imageViewBaseCategoria2"
+                android:id="@+id/imageViewBaseSubCategoria2"
                 android:layout_width="408dp"
                 android:layout_height="178dp"
                 android:layout_marginStart="8dp"
@@ -135,37 +135,37 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.464"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageViewBaseCategoria"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewAutomoveis"
+                android:id="@+id/textViewEletrodomesticos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
                 android:text="Automóveis"
                 android:textColor="#4C4C4C"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria2"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria2"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAutomoveis"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria2"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoEletrodomesticos"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoAutomoveis"
+                android:id="@+id/textViewDescricaoEletrodomesticos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:text="Martelinho de Ouro, Inspeção, Etc."
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria2"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria2"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintHorizontal_bias="0.3"
-                app:layout_constraintStart_toStartOf="@+id/imageViewBaseCategoria2"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria2"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.36" />
 
             <Button
@@ -182,15 +182,15 @@
                 android:textColor="#4C4C4C"
                 android:textSize="15sp"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria2"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria2"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="@+id/imageViewBaseCategoria2"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria2"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.7" />
 
             <ImageView
-                android:id="@+id/imageViewBaseCategoria3"
+                android:id="@+id/imageViewBaseSubCategoria3"
                 android:layout_width="408dp"
                 android:layout_height="178dp"
                 android:layout_marginStart="8dp"
@@ -199,26 +199,26 @@
                 android:layout_marginRight="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageViewBaseCategoria2"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewReformaseReparos"
+                android:id="@+id/textViewInformaticaeTelefonia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
                 android:text="Reformas e Reparos"
                 android:textColor="#4C4C4C"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria3"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria3"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoReformaseReparos"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria3"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoInformaticaeTelefonia"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoReformaseReparos"
+                android:id="@+id/textViewDescricaoInformaticaeTelefonia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
@@ -226,15 +226,15 @@
                 android:text="Pedreiro, Eletricista, Encanador, Decorador, Pintor, Etc."
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria3"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria3"
-                app:layout_constraintHorizontal_bias="0.64"
-                app:layout_constraintStart_toStartOf="@+id/imageViewBaseCategoria3"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria3"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintHorizontal_bias="0.63"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.36" />
 
             <Button
-                android:id="@+id/buttonEscolherCategoriaReformaseReparos"
+                android:id="@+id/buttonEscolherSubCategoriaInformaticaeTelefonia"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -247,11 +247,76 @@
                 android:textColor="#4C4C4C"
                 android:textSize="15sp"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria3"
-                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria3"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="@+id/imageViewBaseCategoria3"
-                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria3"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintVertical_bias="0.7" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria4"
+                android:layout_width="408dp"
+                android:layout_height="178dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewDesigneTecnologia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Design e Tecnologia"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoDesigneTecnologia"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintVertical_bias="0.19999999" />
+
+            <TextView
+                android:id="@+id/textViewDescricaoDesigneTecnologia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:gravity=""
+                android:text="Designers, Programadores, Etc."
+                android:textColor="#4C4C4C"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria4"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintVertical_bias="0.36" />
+
+            <Button
+                android:id="@+id/buttonEscolherCategoriaDesigneTecnologia"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Categoria"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria4"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria4"
                 app:layout_constraintVertical_bias="0.7" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
