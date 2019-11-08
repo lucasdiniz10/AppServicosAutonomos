@@ -10,8 +10,8 @@
         android:id="@+id/textViewSelecionarCategoria2"
         android:layout_width="206dp"
         android:layout_height="26dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/bold"
         android:text="Selecionar Categoria"
         android:textAlignment="center"
@@ -46,19 +46,50 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="376dp"
-        android:layout_height="512dp"
+        android:layout_width="418dp"
+        android:layout_height="552dp"
+        android:layout_margin="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageViewBaseCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewAssistenciaTecnica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Assistência Técnica"
+                android:textColor="#4C4C4C"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseCategoria"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseCategoria"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseCategoria"
+                app:layout_constraintVertical_bias="0.19999999" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
