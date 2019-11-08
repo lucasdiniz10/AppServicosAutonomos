@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gui.FormCadastroContratante">
+    tools:context=".gui.FormCadastroProfissional">
 
     <TextView
         android:id="@+id/textViewCadastro"
         android:layout_width="330dp"
         android:layout_height="31dp"
         android:fontFamily="@font/bold"
-        android:text="Cadastro Contratante"
+        android:text="Cadastro Profissional"
         android:textAlignment="center"
         android:textColor="#3A6A75"
         android:textSize="20sp"
@@ -25,17 +25,18 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCadastro"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -66,7 +67,7 @@
                 android:id="@+id/editTextTelefone"
                 android:layout_width="295dp"
                 android:layout_height="47dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
@@ -138,8 +139,7 @@
                 android:id="@+id/editTextConfirmarEmail"
                 android:layout_width="295dp"
                 android:layout_height="47dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="32dp"
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
@@ -147,20 +147,89 @@
                 android:inputType="textEmailAddress"
                 android:textColor="#000000"
                 android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/editTextDescricao"
+                app:layout_constraintEnd_toEndOf="@+id/editTextDescricao"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="@+id/editTextDescricao"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+            <EditText
+                android:id="@+id/editTextDescricao"
+                android:layout_width="295dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:hint="Descrição (Experiências Profissionais.)"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewFormasDePagamento"
+                app:layout_constraintEnd_toEndOf="@+id/textViewFormasDePagamento"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="@+id/textViewFormasDePagamento"
+                app:layout_constraintTop_toBottomOf="@+id/editTextConfirmarEmail" />
+
+            <TextView
+                android:id="@+id/textViewFormasDePagamento"
+                android:layout_width="221dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/regular"
+                android:text="Formas de Pagamento Aceitas:"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
                 app:layout_constraintEnd_toEndOf="@+id/buttonFinalizarCadastro"
                 app:layout_constraintHorizontal_bias="0.512"
                 app:layout_constraintStart_toStartOf="@+id/buttonFinalizarCadastro"
-                app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextDescricao" />
+
+            <CheckBox
+                android:id="@+id/checkBoxDinheiro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dinheiro"
+                android:fontFamily="@font/regular"
+                app:layout_constraintBottom_toTopOf="@+id/checkBoxCartaoDeDebito"
+                app:layout_constraintEnd_toEndOf="@+id/checkBoxCartaoDeDebito"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="@+id/checkBoxCartaoDeCredito"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFormasDePagamento" />
+
+            <CheckBox
+                android:id="@+id/checkBoxCartaoDeDebito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cartão de Débito"
+                android:fontFamily="@font/regular"
+                app:layout_constraintBottom_toTopOf="@+id/checkBoxCartaoDeCredito"
+                app:layout_constraintEnd_toEndOf="@+id/checkBoxCartaoDeCredito"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="@+id/checkBoxCartaoDeCredito"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxDinheiro" />
+
+            <CheckBox
+                android:id="@+id/checkBoxCartaoDeCredito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/regular"
+                android:text="Cartão de Crédito"
+                app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintEnd_toEndOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxCartaoDeDebito" />
 
             <Button
                 android:id="@+id/buttonFinalizarCadastro"
                 style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="69dp"
                 android:layout_marginLeft="69dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="67dp"
                 android:layout_marginRight="67dp"
                 android:background="@drawable/selector_button"
@@ -176,7 +245,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextConfirmarEmail" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewFormasDePagamento" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

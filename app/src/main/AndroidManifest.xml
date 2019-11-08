@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/appsa_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".gui.PerfilContratante"></activity>
+        <activity android:name=".gui.FormCadastroProfissional"></activity>
+        <activity android:name=".gui.PerfilProfissional" />
+        <activity android:name=".gui.PerfilContratante" />
         <activity android:name=".gui.EscolherSubCategoriaAutomoveis" />
         <activity android:name=".gui.EscolherCategoria" />
         <activity android:name=".gui.EscolherSubCategoriaAssistenciaTecnica" />
