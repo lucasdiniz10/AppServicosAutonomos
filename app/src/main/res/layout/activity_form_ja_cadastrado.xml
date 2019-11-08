@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.584" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonEscolherCategoriaAssistenciaTecnica"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
