@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gui.EscolherSubCategoriaAssistenciaTecnica">
+    tools:context=".gui.EscolherSubCategoriaAutomoveis">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -26,21 +26,21 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textViewSubCategoriaAssistenciaTecnica"
-                android:layout_width="196dp"
-                android:layout_height="29dp"
+                android:id="@+id/textViewSubCategoriaAutomoveis"
+                android:layout_width="128dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/bold"
-                android:text="Assistência Técnica"
+                android:text="Automóveis"
                 android:textAlignment="center"
                 android:textColor="#3A6A75"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewSubTitulo"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.109"
+                app:layout_constraintHorizontal_bias="0.1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.271" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/textViewSubTitulo"
@@ -92,26 +92,26 @@
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewAparelhosEletronicos"
+                android:id="@+id/textViewFunilariaePintura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
-                android:text="Aparelhos Eletrônicos "
+                android:text="Funilaria e Pintura"
                 android:textColor="#4C4C4C"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAparelhosEletronicos"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoFunilariaePintura"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoAparelhosEletronicos"
+                android:id="@+id/textViewDescricaoFunilariaePintura"
                 android:layout_width="291dp"
                 android:layout_height="34dp"
                 android:fontFamily="@font/regular"
-                android:text="Aparelho de Som, Ar condicionado, Televisão, Vídeo game, Etc. "
+                android:text="Funilaria Automotiva, Higienização e Polimento, Martelinho de Ouro, Pintura."
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
@@ -122,7 +122,7 @@
                 app:layout_constraintVertical_bias="0.36" />
 
             <Button
-                android:id="@+id/buttonEscolherSubCategoriaDescricaoAparelhosEletronicos"
+                android:id="@+id/buttonEscolherSubCategoriaFunilariaePintura"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -156,26 +156,26 @@
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewEletrodomesticos"
+                android:id="@+id/textViewVidracariaAutomotiva"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
-                android:text="Eletrodomésticos"
+                android:text="Vidraçaria Automotiva"
                 android:textColor="#4C4C4C"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoEletrodomesticos"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoVidracariaAutomotiva"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoEletrodomesticos"
-                android:layout_width="264dp"
-                android:layout_height="36dp"
+                android:id="@+id/textViewDescricaoVidracariaAutomotiva"
+                android:layout_width="260dp"
+                android:layout_height="24dp"
                 android:fontFamily="@font/regular"
-                android:text="Fogão e Cooktop, Geladeira e Freezer, Lava Louça, Lava Roupa, Microondas, Etc. "
+                android:text="Insufilm, Vidraçaria em Geral."
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
@@ -186,7 +186,7 @@
                 app:layout_constraintVertical_bias="0.36" />
 
             <Button
-                android:id="@+id/buttonEscolherCategoriaAutomoveis"
+                android:id="@+id/buttonEscolherSubCategoriaVidracariaAutomotiva"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -220,38 +220,38 @@
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewInformaticaeTelefonia"
+                android:id="@+id/textViewMecanica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
-                android:text="Informática e Telefonia"
+                android:text="Mecânica"
                 android:textColor="#4C4C4C"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoInformaticaeTelefonia"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoMecanica"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoInformaticaeTelefonia"
-                android:layout_width="374dp"
-                android:layout_height="35dp"
+                android:id="@+id/textViewDescricaoMecanica"
+                android:layout_width="224dp"
+                android:layout_height="24dp"
                 android:fontFamily="@font/regular"
                 android:gravity=""
-                android:text="Cabeamento e Redes, Celular, Computador Desktop, Impressora, Notebooks, Teblet, Telefone(não celular), Etc."
+                android:text="Borracharia, Guincho, Mecânica Geral"
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
-                app:layout_constraintHorizontal_bias="0.62"
+                app:layout_constraintHorizontal_bias="0.37"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.36" />
 
             <Button
-                android:id="@+id/buttonEscolherSubCategoriaInformaticaeTelefonia"
+                android:id="@+id/buttonEscolherSubCategoriaMecanica"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

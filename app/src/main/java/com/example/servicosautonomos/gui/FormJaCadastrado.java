@@ -26,7 +26,7 @@ public class FormJaCadastrado extends AppCompatActivity {
         setContentView(R.layout.activity_form_ja_cadastrado);
 
 
-        this.buttonLogin = findViewById(R.id.buttonEscolherCategoriaAssistenciaTecnica);
+        this.buttonLogin = findViewById(R.id.buttonLogin);
 
         //acessando o firebase para listar
         FirebaseApp.initializeApp(FormJaCadastrado.this);
