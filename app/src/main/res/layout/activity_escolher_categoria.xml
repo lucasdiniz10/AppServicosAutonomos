@@ -26,7 +26,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textViewSubTitulo"
+                android:id="@+id/textViewSubTituloCategoria"
                 android:layout_width="219dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="16dp"
@@ -40,10 +40,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewSelecionarSubCategoriaAssistenciaTecnica" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewSubCategoriaAssistenciaTecnica" />
 
             <TextView
-                android:id="@+id/textViewSelecionarSubCategoriaAssistenciaTecnica"
+                android:id="@+id/textViewCategoriaAssistenciaTecnica"
                 android:layout_width="248dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="16dp"
@@ -52,7 +52,7 @@
                 android:textAlignment="center"
                 android:textColor="#3A6A75"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewSubTitulo"
+                app:layout_constraintBottom_toTopOf="@+id/textViewSubTituloCategoria"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.109"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewAparelhosEletronicos "
+                android:id="@+id/textViewAssistenciaTecnica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
@@ -85,12 +85,12 @@
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAparelhosEletronicos "
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAssistenciaTecnica"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoAparelhosEletronicos "
+                android:id="@+id/textViewDescricaoAssistenciaTecnica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
@@ -105,7 +105,7 @@
                 app:layout_constraintVertical_bias="0.36" />
 
             <Button
-                android:id="@+id/buttonEscolherSubCategoriatextViewDescricaoAparelhosEletronicos "
+                android:id="@+id/buttonEscolherCategoriaAssistenciaTecnica"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewEletrodomesticos"
+                android:id="@+id/textViewAutomoveis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
@@ -149,12 +149,12 @@
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoEletrodomesticos"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAutomoveis"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoEletrodomesticos"
+                android:id="@+id/textViewDescricaoAutomoveis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
@@ -203,7 +203,7 @@
                 app:srcCompat="@drawable/categoria" />
 
             <TextView
-                android:id="@+id/textViewInformaticaeTelefonia"
+                android:id="@+id/textViewReformaseReparos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
@@ -213,12 +213,12 @@
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoInformaticaeTelefonia"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoReformaseReparos"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
-                android:id="@+id/textViewDescricaoInformaticaeTelefonia"
+                android:id="@+id/textViewDescricaoReformaseReparos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
@@ -234,7 +234,7 @@
                 app:layout_constraintVertical_bias="0.36" />
 
             <Button
-                android:id="@+id/buttonEscolherSubCategoriaInformaticaeTelefonia"
+                android:id="@+id/buttonEscolherCategoriaReformaseReparos"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

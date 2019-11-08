@@ -26,7 +26,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textViewSelecionarSubCategoriaAssistenciaTecnica"
+                android:id="@+id/textViewSubCategoriaAssistenciaTecnica"
                 android:layout_width="248dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="16dp"
@@ -57,22 +57,24 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewSelecionarSubCategoriaAssistenciaTecnica" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewSubCategoriaAssistenciaTecnica" />
 
             <TextView
                 android:id="@+id/textViewSubTitulo2"
                 android:layout_width="282dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="28dp"
                 android:fontFamily="@font/regular"
                 android:text="Após o cadastro, você poderá alterar as suas  sub-categorias"
                 android:textAlignment="center"
                 android:textColor="#73B650"
                 android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewSubTitulo" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewSubTituloCategoria" />
 
             <ImageView
                 android:id="@+id/imageViewBaseSubCategoria"
@@ -234,8 +236,8 @@
 
             <TextView
                 android:id="@+id/textViewDescricaoInformaticaeTelefonia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="374dp"
+                android:layout_height="35dp"
                 android:fontFamily="@font/regular"
                 android:gravity=""
                 android:text="Cabeamento e Redes, Celular, Computador Desktop, Impressora, Notebooks, Teblet, Telefone(não celular), Etc."
@@ -243,7 +245,7 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
-                app:layout_constraintHorizontal_bias="0.63"
+                app:layout_constraintHorizontal_bias="0.62"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.36" />
