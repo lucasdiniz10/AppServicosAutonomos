@@ -179,30 +179,30 @@
                 android:fontFamily="@font/regular"
                 android:text="Formas de Pagamento Aceitas:"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
-                app:layout_constraintEnd_toEndOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintBottom_toTopOf="@+id/checkBoxDinheiro"
+                app:layout_constraintEnd_toEndOf="@+id/checkBoxDinheiro"
                 app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintStart_toStartOf="@+id/checkBoxDinheiro"
                 app:layout_constraintTop_toBottomOf="@+id/editTextDescricao" />
 
             <CheckBox
                 android:id="@+id/checkBoxDinheiro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dinheiro"
                 android:fontFamily="@font/regular"
+                android:text="Dinheiro"
                 app:layout_constraintBottom_toTopOf="@+id/checkBoxCartaoDeDebito"
                 app:layout_constraintEnd_toEndOf="@+id/checkBoxCartaoDeDebito"
                 app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@+id/checkBoxCartaoDeCredito"
+                app:layout_constraintStart_toStartOf="@+id/checkBoxCartaoDeDebito"
                 app:layout_constraintTop_toBottomOf="@+id/textViewFormasDePagamento" />
 
             <CheckBox
                 android:id="@+id/checkBoxCartaoDeDebito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cartão de Débito"
                 android:fontFamily="@font/regular"
+                android:text="Cartão de Débito"
                 app:layout_constraintBottom_toTopOf="@+id/checkBoxCartaoDeCredito"
                 app:layout_constraintEnd_toEndOf="@+id/checkBoxCartaoDeCredito"
                 app:layout_constraintHorizontal_bias="0.512"
@@ -213,14 +213,117 @@
                 android:id="@+id/checkBoxCartaoDeCredito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
                 android:fontFamily="@font/regular"
                 android:text="Cartão de Crédito"
-                app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
-                app:layout_constraintEnd_toEndOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintBottom_toTopOf="@+id/textViewEndereco"
+                app:layout_constraintEnd_toEndOf="@+id/textViewEndereco"
                 app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintStart_toStartOf="@+id/textViewEndereco"
                 app:layout_constraintTop_toBottomOf="@+id/checkBoxCartaoDeDebito" />
+
+            <TextView
+                android:id="@+id/textViewEndereco"
+                android:layout_width="221dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/bold"
+                android:text="Endereço"
+                android:textAlignment="center"
+                android:textColor="#3A6A75"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxCartaoDeCredito" />
+
+            <EditText
+                android:id="@+id/editTextEnderecoNomeRua"
+                android:layout_width="295dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="8dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:hint="Rua"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEndereco" />
+
+            <EditText
+                android:id="@+id/editTextEnderecoNumero"
+                android:layout_width="130dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="195dp"
+                android:layout_marginRight="195dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:hint="Nº"
+                android:inputType="number"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/editTextEnderecoCidade"
+                app:layout_constraintEnd_toStartOf="@+id/editTextEnderecoBairro"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/editTextEnderecoNomeRua"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEnderecoNomeRua" />
+
+            <EditText
+                android:id="@+id/editTextEnderecoBairro"
+                android:layout_width="130dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:hint="Bairro"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextEnderecoNumero"
+                app:layout_constraintEnd_toEndOf="@+id/editTextEnderecoNomeRua"
+                app:layout_constraintTop_toTopOf="@+id/editTextEnderecoNumero"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/editTextEnderecoCidade"
+                android:layout_width="130dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="195dp"
+                android:layout_marginRight="195dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:hint="Cidade"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintEnd_toStartOf="@+id/editTextEnderecoEstado"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/editTextEnderecoNumero"
+                app:layout_constraintTop_toBottomOf="@id/editTextEnderecoNumero" />
+
+            <EditText
+                android:id="@+id/editTextEnderecoEstado"
+                android:layout_width="130dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:hint="Estado"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/editTextEnderecoCidade"
+                app:layout_constraintEnd_toEndOf="@+id/editTextEnderecoBairro"
+                app:layout_constraintTop_toTopOf="@id/editTextEnderecoCidade"
+                app:layout_constraintVertical_bias="1.0" />
 
             <Button
                 android:id="@+id/buttonFinalizarCadastro"
@@ -245,7 +348,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewFormasDePagamento" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextEnderecoCidade" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
