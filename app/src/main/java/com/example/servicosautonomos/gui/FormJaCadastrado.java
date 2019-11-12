@@ -29,11 +29,16 @@ public class FormJaCadastrado extends AppCompatActivity {
         FirebaseApp.initializeApp(FormJaCadastrado.this);
         FirebaseDatabase bd = FirebaseDatabase.getInstance();
         final DatabaseReference bdRef = bd.getReference();
-        FirebaseDatabase.getInstance().getReference("usuarios"); /*{
+        FirebaseDatabase.getInstance().getReference("contratante");
+
+
+
+
+        /*{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    usuarios = new ArrayList<>();
+                    contratante = new ArrayList<>();
                     //listView.setAdapter(null);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Usuario usu = snapshot.getValue(Usuario.class);
