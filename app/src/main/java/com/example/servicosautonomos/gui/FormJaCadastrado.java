@@ -1,6 +1,7 @@
 package com.example.servicosautonomos.gui;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -31,9 +32,6 @@ public class FormJaCadastrado extends AppCompatActivity {
         final DatabaseReference bdRef = bd.getReference();
         FirebaseDatabase.getInstance().getReference("contratante");
 
-
-
-
         /*{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -55,8 +53,33 @@ public class FormJaCadastrado extends AppCompatActivity {
         });
         */
 
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+
+            EditText editTextLogin, editTextSenha;
+
+            @Override
+            public void onClick(View v) {
+
+                this.editTextLogin = findViewById(R.id.editTextLogin);
+                this.editTextSenha = findViewById(R.id.editTextSenha);
+
+                adicionaValidacao(editTextLogin);
+                adicionaValidacao(editTextSenha);
+            }
+
+            //método para validar, levando tbm o foco para o campo
+            private void adicionaValidacao(final EditText campo) {
+                campo.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus) {
+                        final String texto = campo.getText().toString().trim();
+                        if (texto.isEmpty()){
+                            campo.setError("Campo obrigatório");
+                        }
+                    }
+                });
+            }
+        });
 
     }
-
-
 }
