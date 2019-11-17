@@ -1,9 +1,10 @@
-package com.example.servicosautonomos;
+package com.example.servicosautonomos.gui;
 
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 
+import com.example.servicosautonomos.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
