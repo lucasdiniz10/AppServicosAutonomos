@@ -15,8 +15,9 @@
         android:roundIcon="@mipmap/appsa_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".gui.EscolherSubCategoriaReformasReparos"></activity>
-        <activity android:name=".gui.ListarOsContratantes"></activity>
+        <activity android:name=".gui.EscolherSubCategoriaDesignTecnologia"></activity>
+        <activity android:name=".gui.EscolherSubCategoriaReformasReparos" />
+        <activity android:name=".gui.ListarOsContratantes" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

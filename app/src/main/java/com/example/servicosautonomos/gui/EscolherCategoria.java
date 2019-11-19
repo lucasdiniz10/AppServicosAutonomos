@@ -11,7 +11,7 @@ import com.example.servicosautonomos.R;
 
 public class EscolherCategoria extends AppCompatActivity {
 
-    Button button, button2, button3;
+    Button button, button2, button3, button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,5 +44,13 @@ public class EscolherCategoria extends AppCompatActivity {
             }
         });
 
+        button4 = (Button)findViewById(R.id.buttonEscolherCategoriaDesigneTecnologia);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EscolherCategoria.this, EscolherSubCategoriaDesignTecnologia.class);
+                startActivity(intent);
+            }
+        });
     }
 }

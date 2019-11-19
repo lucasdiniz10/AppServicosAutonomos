@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gui.EscolherSubCategoriaDesignTecnologia">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="394dp"
+        android:layout_height="654dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.987">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewSubCategoriaDesignTecnologia"
+                android:layout_width="213dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/bold"
+                android:text="Design e Tecnologia"
+                android:textAlignment="center"
+                android:textColor="#3A6A75"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewSubTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textViewSubTitulo"
+                android:layout_width="284dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/bold"
+                android:text="Escolha a sub-categoria  dos serviços que você realiza."
+                android:textAlignment="center"
+                android:textColor="#73B650"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewSubTitulo2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSubCategoriaAssistenciaTecnica" />
+
+            <TextView
+                android:id="@+id/textViewSubTitulo2"
+                android:layout_width="282dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="28dp"
+                android:fontFamily="@font/regular"
+                android:text="Após o cadastro, você poderá alterar as suas  sub-categorias"
+                android:textAlignment="center"
+                android:textColor="#73B650"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSubTituloCategoria" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria"
+                android:layout_width="408dp"
+                android:layout_height="178dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewTecnologia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Tecnologia"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoTecnologia"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintVertical_bias="0.19999999" />
+
+            <TextView
+                android:id="@+id/textViewDescricaoTecnologia"
+                android:layout_width="291dp"
+                android:layout_height="34dp"
+                android:fontFamily="@font/regular"
+                android:text="Desenvolvimento de sites e Sistemas, Marketing Online."
+                android:textColor="#4C4C4C"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintHorizontal_bias="0.57"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintVertical_bias="0.36" />
+
+            <Button
+                android:id="@+id/buttonEscolherSubCategoriaTecnologia"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Grupo"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintVertical_bias="0.7" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria2"
+                android:layout_width="408dp"
+                android:layout_height="178dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.464"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewGrafica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Gráfica"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoGrafica"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintVertical_bias="0.19999999" />
+
+            <TextView
+                android:id="@+id/textViewDescricaoGrafica"
+                android:layout_width="257dp"
+                android:layout_height="38dp"
+                android:fontFamily="@font/regular"
+                android:text="Criação de Logos, Diagramador, Convites, Produção Gráfica."
+                android:textColor="#4C4C4C"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintVertical_bias="0.36" />
+
+            <Button
+                android:id="@+id/buttonEscolherSubCategoriaGrafica"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Grupo"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintVertical_bias="0.7" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria3"
+                android:layout_width="408dp"
+                android:layout_height="178dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewAudioVisual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Áudio/Visual"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAudioVisual"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintVertical_bias="0.19999999" />
+
+            <TextView
+                android:id="@+id/textViewDescricaoAudioVisual"
+                android:layout_width="251dp"
+                android:layout_height="36dp"
+                android:fontFamily="@font/regular"
+                android:gravity=""
+                android:text="Áudio e Vídeo, Edição de Fotos, Ilustração, Autocad, Animação."
+                android:textColor="#4C4C4C"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintHorizontal_bias="0.37"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintVertical_bias="0.36" />
+
+            <Button
+                android:id="@+id/buttonEscolherSubCategoriaAudioVisual"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Grupo"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintVertical_bias="0.7" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
