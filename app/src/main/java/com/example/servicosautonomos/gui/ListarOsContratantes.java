@@ -1,10 +1,8 @@
 package com.example.servicosautonomos.gui;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,11 +22,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EscolherPorCategoria extends AppCompatActivity {
+public class ListarOsContratantes extends AppCompatActivity {
     Button butaoTest;
     ListView listView;
     TextView textView;
@@ -41,7 +38,7 @@ public class EscolherPorCategoria extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_escolher_por_categoria);
+        setContentView(R.layout.listar_os_contratantes);
 
         this.butaoTest = findViewById(R.id.CategotiaAindaEmDefinicao);
 
@@ -52,7 +49,7 @@ public class EscolherPorCategoria extends AppCompatActivity {
         butaoTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseApp.initializeApp(EscolherPorCategoria.this);
+                FirebaseApp.initializeApp(ListarOsContratantes.this);
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 final DatabaseReference bdRef = database.getReference();
                 FirebaseDatabase.getInstance().getReference("contratante").addValueEventListener(new ValueEventListener() {
@@ -65,7 +62,7 @@ public class EscolherPorCategoria extends AppCompatActivity {
                             Contratante contratante = key.getValue(Contratante.class);
                             contratantes.add(contratante);
                         }
-                        ContratanteAdapter adapter = new ContratanteAdapter(EscolherPorCategoria.this, contratantes);
+                        ContratanteAdapter adapter = new ContratanteAdapter(ListarOsContratantes.this, contratantes);
                         listView.setAdapter(adapter);
                         textView = findViewById(R.id.testetetet);
                         Contratante cont = (Contratante) contratantes.get(1);

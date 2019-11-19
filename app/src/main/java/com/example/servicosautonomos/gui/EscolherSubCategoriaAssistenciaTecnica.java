@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servicosautonomos.R;
+import com.example.servicosautonomos.classesbasicas.AparelhosEletronicos;
 
 public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
 
@@ -22,7 +23,13 @@ public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AparelhosEletronicos aparelhosEletronicos = new AparelhosEletronicos();
+                aparelhosEletronicos.condicao = 1;
+                aparelhosEletronicos.latitude = Double.valueOf(0);
+                aparelhosEletronicos.longitude = Double.valueOf(0);
+
                 Intent intent = new Intent(EscolherSubCategoriaAssistenciaTecnica.this, FormCadastroProfissional.class);
+                intent.putExtra("condiçao da classe", aparelhosEletronicos);
                 startActivity(intent);
             }
         });
