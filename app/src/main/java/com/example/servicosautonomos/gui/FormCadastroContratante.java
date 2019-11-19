@@ -96,8 +96,10 @@ public class FormCadastroContratante extends AppCompatActivity {
                 editTextEmail.setText("");
                 editTextSenha.setText("");
 
-                Intent intent = new Intent(FormCadastroContratante.this, ListarOsContratantes.class);
+                Intent intent = new Intent(FormCadastroContratante.this, ListaDeServicos.class);
                 startActivity(intent);
+
+
             }
         });
     }
