@@ -56,15 +56,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     aparelhosLista.add(aparelhosEletronicos);
                 }
                 int size = aparelhosLista.size();
-                int contador = 0;
-                for (int i =0;  i > size; i++){
+                int cont = 0;
 
-                    AparelhosEletronicos ap = (AparelhosEletronicos) aparelhosLista.get(contador);
+                do {
+                    AparelhosEletronicos ap = aparelhosLista.get(cont);
                     Double lat = ap.latitude;
                     Double lon = ap.longitude;
-                    mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)));
-                    contador++;
-                }
+
+                    LatLng latLng = new LatLng(lat,lon);
+
+                    MarkerOptions options = new MarkerOptions().position(latLng).title("test" + cont);
+                    mMap.addMarker(options);
+
+                    cont++;
+                }while (cont < size);
+
 
 
 
