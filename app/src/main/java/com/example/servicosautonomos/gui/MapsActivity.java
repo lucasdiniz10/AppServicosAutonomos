@@ -1,6 +1,7 @@
 package com.example.servicosautonomos.gui;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -41,9 +43,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private FusedLocationProviderClient mFusedLocationProviderClient;
     ArrayList<AparelhosEletronicos> aparelhosLista = new ArrayList<>();
     private static final float DEFAULT_ZOOM = 13f;
-    private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
-    private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
     private static final String TAG = "MapsActivity";
 
     @Override
@@ -101,6 +100,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     mMap.addMarker(options);
 
                     float zoom = DEFAULT_ZOOM;
+
+                    mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                        @Override
+                        public void onInfoWindowClick(Marker marker) {
+                            int i = 1;
+                            Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
+                            i += 1;
+                            Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
+                            startActivity(intent);
+                        }
+                    });
 
                     cont++;
                 }while (cont < size);
