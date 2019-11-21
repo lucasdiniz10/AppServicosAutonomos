@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.example.servicosautonomos.R;
 import com.example.servicosautonomos.classesbasicas.AparelhosEletronicos;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -26,6 +27,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     ArrayList<AparelhosEletronicos> aparelhosLista = new ArrayList<>();
+    private static final float DEFAULT_ZOOM = 13f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     MarkerOptions options = new MarkerOptions().position(latLng).title("test" + cont);
                     mMap.addMarker(options);
+
+                    float zoom = DEFAULT_ZOOM;
+
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
 
                     cont++;
                 }while (cont < size);
