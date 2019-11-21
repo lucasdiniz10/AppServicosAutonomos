@@ -68,11 +68,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mLocationPermissionsGranted = true;
             }else{
                 ActivityCompat.requestPermissions(this, permissions, LOCATION_PERMISSION_REQUEST_CODE);
-
             }
         }else{
             ActivityCompat.requestPermissions(this, permissions, LOCATION_PERMISSION_REQUEST_CODE);
-
         }
     }
 
@@ -123,19 +121,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     cont++;
                 }while (cont < size);
-
-
-
-
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
-
-
         });
     }
 
@@ -227,6 +217,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
     }
-
-
 }
