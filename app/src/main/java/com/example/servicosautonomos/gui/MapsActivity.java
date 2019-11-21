@@ -5,9 +5,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.inputmethod.EditorInfo;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,7 +18,6 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -40,8 +36,9 @@ import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+
     private GoogleMap mMap;
-    private Boolean mLocationPermissionsGranted = false;
+    private boolean mLocationPermissionsGranted = false;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     ArrayList<AparelhosEletronicos> aparelhosLista = new ArrayList<>();
     private static final float DEFAULT_ZOOM = 13f;
@@ -113,7 +110,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 int cont = 0;
 
                 do {
-                    AparelhosEletronicos ap = aparelhosLista.get(cont);
+                    AparelhosEletronicos ap = (AparelhosEletronicos) aparelhosLista.get(cont);
                     Double lat = ap.latitude;
                     Double lon = ap.longitude;
 
