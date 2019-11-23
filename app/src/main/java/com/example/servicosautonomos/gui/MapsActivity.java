@@ -57,7 +57,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 int size = aparelhosLista.size();
                 int contador = 0;
-                for (int i =0;  i > size; i++){
+                for (int i =0;  i < size; i++){
 
                     AparelhosEletronicos ap = (AparelhosEletronicos) aparelhosLista.get(contador);
                     Double lat = ap.latitude;
