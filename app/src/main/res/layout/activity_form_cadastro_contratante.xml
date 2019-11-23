@@ -6,6 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".gui.FormCadastroContratante">
 
+    <ImageView
+        android:id="@+id/imageViewFotoContratante"
+        android:layout_width="112dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:background="@drawable/userpic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAbrirCamera"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="117dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/bold"
+        android:padding="0px"
+        android:text="Adicionar Foto"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#3A6A75"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFotoContratante" />
+
+    <Button
+        android:id="@+id/buttonAbrirGaleria"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="117dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/bold"
+        android:padding="0px"
+        android:text="Abrir Galeria"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#3A6A75"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAbrirCamera" />
+
     <TextView
         android:id="@+id/textViewCadastro"
         android:layout_width="330dp"
@@ -19,17 +64,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAbrirGaleria"
         app:layout_constraintVertical_bias="0.072" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
