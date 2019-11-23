@@ -22,6 +22,8 @@ public class FormCadastroContratante extends AppCompatActivity {
     private static final String TAG = "Contratante";
     Button buttonLogin;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
