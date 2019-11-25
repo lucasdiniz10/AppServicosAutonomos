@@ -129,24 +129,9 @@
                 android:text="Email"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewServicosOferecidos"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewDataNascimento" />
-
-            <TextView
-                android:id="@+id/textViewServicosOferecidos"
-                android:layout_width="295dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/regular"
-                android:text="Serviços Oferecidos"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
             <Button
                 android:id="@+id/buttonFinalizarCadastro"
@@ -172,7 +157,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewServicosOferecidos" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

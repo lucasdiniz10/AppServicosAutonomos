@@ -57,7 +57,8 @@ public class FormCadastroContratante extends AppCompatActivity {
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
 
-            EditText editTextNome, editTextTelefone, editTextCpf, editTextDataNascimento, editTextEmail, editTextConfirmarEmail, editTextSenha, editTextConfirmarSenha;
+            EditText editTextNome, editTextTelefone, editTextCpf, editTextDataNascimento, editTextEndereco,
+                    editTextEmail, editTextConfirmarEmail, editTextSenha, editTextConfirmarSenha;
 
             @Override
             public void onClick(View v) {
@@ -68,6 +69,7 @@ public class FormCadastroContratante extends AppCompatActivity {
                 this.editTextTelefone = findViewById(R.id.editTextTelefone);
                 this.editTextCpf = findViewById(R.id.editTextCpf);
                 this.editTextDataNascimento = findViewById(R.id.editTextDataNascimento);
+                this.editTextEndereco = findViewById(R.id.editTextEndereco);
                 this.editTextEmail = findViewById(R.id.editTextEmail);
                 this.editTextConfirmarEmail = findViewById(R.id.editTextConfirmarEmail);
                 this.editTextSenha = findViewById(R.id.editTextSenha);
@@ -102,7 +104,8 @@ public class FormCadastroContratante extends AppCompatActivity {
                 editTextEmail.setText("");
                 editTextSenha.setText("");
 
-                Intent intent = new Intent(FormCadastroContratante.this, ListaDeServicos.class);
+                Intent intent = new Intent(FormCadastroContratante.this, PerfilContratante.class);
+                intent.putExtra("perfil", contratante);
                 startActivity(intent);
             }
         });
