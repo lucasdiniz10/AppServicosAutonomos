@@ -14,6 +14,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.servicosautonomos.R;
+import com.example.servicosautonomos.classesbasicas.ReferenciaBotao;
 
 public class ListaDeServicos extends AppCompatActivity {
 
@@ -36,7 +37,13 @@ public class ListaDeServicos extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ReferenciaBotao referenciaBotao = new ReferenciaBotao();
+
+                referenciaBotao.aparelhosEletronicos = true;
+                referenciaBotao.eletrodomensticos = false;
+
                 Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
+                intent.putExtra("Referencia", referenciaBotao);
                 startActivity(intent);
             }
         });
