@@ -20,23 +20,22 @@ import com.example.servicosautonomos.classesbasicas.Contratante;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-<<<<<<< HEAD
+
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-=======
 
->>>>>>> master
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FormCadastroContratante extends AppCompatActivity implements View.OnClickListener {
 
-<<<<<<< HEAD
+
     EditText editTextNome, editTextTelefone, editTextCpf, editTextDataNascimento,
             editTextEmail, editTextConfirmarEmail, editTextSenha, editTextConfirmarSenha;
-=======
+
     private static final String TAG = "Contratante";
->>>>>>> master
+
     Button buttonLogin;
     private FirebaseAuth firebaseAuth;
     private AwesomeValidation awesomeValidation;
