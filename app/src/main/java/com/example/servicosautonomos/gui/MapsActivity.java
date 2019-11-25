@@ -86,8 +86,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 List<String> keys = new ArrayList<>();
                 for (DataSnapshot key : dataSnapshot.getChildren()) {
                     keys.add(key.getKey());
+<<<<<<< HEAD
+                    AparelhosEletronicos aparelhosEletronicos = key.getValue(AparelhosEletronicos.class);
+                    aparelhosLista.add(aparelhosEletronicos);
+                }
+                int size = aparelhosLista.size();
+                int contador = 0;
+                for (int i =0;  i < size; i++){
+
+                    AparelhosEletronicos ap = (AparelhosEletronicos) aparelhosLista.get(contador);
+                    Double lat = ap.latitude;
+                    Double lon = ap.longitude;
+                    mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)));
+                    contador++;
+=======
                     Profissional profissional = key.getValue(Profissional.class);
                     profissionalLista.add(profissional);
+>>>>>>> master
                 }
                 int size = profissionalLista.size();
                 int cont = 0;
