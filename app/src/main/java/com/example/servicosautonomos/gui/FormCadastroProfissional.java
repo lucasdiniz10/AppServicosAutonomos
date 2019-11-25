@@ -99,11 +99,6 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 final String senha = editTextSenha.getText().toString();
                 final String confirmarSenha = editTextConfirmarSenha.getText().toString();
                 final String descricao = editTextDescricao.getText().toString();
-                final String nomeRua = editTextEnderecoNomeRua.getText().toString();
-                final String numero = editTextEnderecoNumero.getText().toString();
-                final String bairro = editTextEnderecoBairro.getText().toString();
-                final String cidade = editTextEnderecoCidade.getText().toString();
-                final String estado = editTextEnderecoEstado.getText().toString();
 
 
 
@@ -128,7 +123,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 profissional.dataNasc = dataNascimento;
                 profissional.email = email;
                 profissional.senha = senha;
-                profissional.descricao = senha;
+                profissional.descricao = descricao;
 
 
                 Toast.makeText(FormCadastroProfissional.this,"Profissional cadastrado com sucesso.",Toast.LENGTH_LONG).show();
