@@ -22,12 +22,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewNomeProfissional"
+        android:id="@+id/textViewTituloDados"
         android:layout_width="0dp"
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/bold"
-        android:text="Nome do Profissional"
+        android:text="Dados do Profissional"
         android:textAlignment="center"
         android:textColor="#3A6A75"
         android:textSize="15sp"
@@ -47,7 +47,6 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNomeProfissional">
 
@@ -150,18 +149,78 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
             <TextView
+                android:id="@+id/textViewDescricao"
+                android:layout_width="295dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/regular"
+                android:maxLines="10"
+                android:text="Descrição"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewFormasDePagamento"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewServicosOferecidos" />
+
+            <TextView
                 android:id="@+id/textViewFormasDePagamento"
                 android:layout_width="295dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="32dp"
-                android:fontFamily="@font/regular"
-                android:text="Formas de Pagamento"
+                android:fontFamily="@font/bold"
+                android:maxLines="10"
+                android:text="Formas de Pagamento:"
+                android:textAlignment="center"
+                android:textColor="#3A6A75"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewPagamentoDinheiro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewServicosOferecidos" />
+
+            <TextView
+                android:id="@+id/textViewPagamentoDinheiro"
+                android:layout_width="292dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/bold"
+                android:text="Dinheiro"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewPagamentoDebito"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescricao" />
+
+            <TextView
+                android:id="@+id/textViewPagamentoDebito"
+                android:layout_width="292dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/bold"
+                android:text="Cartão de Débito"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewPagamentoCredito"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPagamentoDinheiro" />
+
+            <TextView
+                android:id="@+id/textViewPagamentoCredito"
+                android:layout_width="292dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/bold"
+                android:text="Cartão de Crédito"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewServicosOferecidos" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewPagamentoDebito" />
 
             <Button
                 android:id="@+id/buttonFinalizarCadastro"
@@ -173,7 +232,6 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="69dp"
                 android:layout_marginRight="69dp"
-                android:layout_marginBottom="8dp"
                 android:background="@drawable/selector_button"
                 android:baselineAligned="false"
                 android:fontFamily="@font/bold"
@@ -186,8 +244,9 @@
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewFormasDePagamento" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewPagamentoCredito" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

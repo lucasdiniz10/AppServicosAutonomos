@@ -14,8 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servicosautonomos.R;
-import com.example.servicosautonomos.classesbasicas.AparelhosEletronicos;
-import com.example.servicosautonomos.classesbasicas.Contratante;
 import com.example.servicosautonomos.classesbasicas.Profissional;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
@@ -127,12 +125,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
 
 
                 Toast.makeText(FormCadastroProfissional.this,"Profissional cadastrado com sucesso.",Toast.LENGTH_LONG).show();
-                editTextNome.setText("");
-                editTextTelefone.setText("");
-                editTextCpf.setText("");
-                editTextDataNascimento.setText("");
-                editTextEmail.setText("");
-                editTextSenha.setText("");
+
 
                 /*Intent intent = new Intent(FormCadastroProfissional.this, PerfilProfissional.class);
                 startActivity(intent);*/
@@ -160,7 +153,9 @@ public class FormCadastroProfissional extends AppCompatActivity {
         final String cidade = editTextEnderecoCidade.getText().toString();
         final String estado = editTextEnderecoEstado.getText().toString();
 
-        String searchString = estado + ", " + cidade + ", " + bairro + ", " + nomeRua + ", " + numero;;
+        String searchString = estado + ", " + cidade + ", " + bairro + ", " + nomeRua + ", " + numero;
+
+        profissional.endereco = searchString;
 
         Geocoder geocoder = new Geocoder(FormCadastroProfissional.this);
         List<Address> list = new ArrayList<>();
@@ -173,6 +168,8 @@ public class FormCadastroProfissional extends AppCompatActivity {
         if(list.size() > 0){
             Address address = list.get(0);
             Log.d(TAG, "geoLocate: found a location: " + address.toString());
+
+
 
             profissional.latitude = address.getLatitude();
             profissional.longitude = address.getLongitude();
@@ -191,5 +188,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
         bdRef.child("profissional").push().setValue(profissional);
 
         Intent intent = new Intent(FormCadastroProfissional.this, PerfilProfissional.class);
+        intent.putExtra("dados", profissional);
+        startActivity(intent);
     }
 }

@@ -18,7 +18,7 @@ import com.example.servicosautonomos.classesbasicas.ReferenciaBotao;
 
 public class ListaDeServicos extends AppCompatActivity {
 
-    Button button;
+    Button button, buttonEletrodomestico;
     private boolean mLocationPermissionsGranted = false;
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -48,7 +48,21 @@ public class ListaDeServicos extends AppCompatActivity {
             }
         });
 
+        buttonEletrodomestico = findViewById(R.id.buttonEletroDomesticos);
 
+        buttonEletrodomestico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReferenciaBotao referenciaBotao = new ReferenciaBotao();
+
+                referenciaBotao.aparelhosEletronicos = false;
+                referenciaBotao.eletrodomensticos = true;
+
+                Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
+                intent.putExtra("Referencia", referenciaBotao);
+                startActivity(intent);
+            }
+        });
     }
 
 

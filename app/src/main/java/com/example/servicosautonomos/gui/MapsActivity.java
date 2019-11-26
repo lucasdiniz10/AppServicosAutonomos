@@ -94,7 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 do {
                     final ReferenciaBotao referenciaBotao = getIntent().getExtras().getParcelable("Referencia");
 
-                    if(referenciaBotao.aparelhosEletronicos = true){
+                    if(referenciaBotao.aparelhosEletronicos == true){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("aparelhosEletronicos")){
                             Double lat = profissa.latitude;
@@ -125,7 +125,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         }
 
                     }
-                    if(referenciaBotao.eletrodomensticos = true){
+                    if(referenciaBotao.eletrodomensticos == true){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("eletrodomesticos")){
                             Double lat = profissa.latitude;
@@ -149,7 +149,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     i += 1;
 
                                     Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
-                                    intent.putExtra("usuario", profissa);
+                                    intent.putExtra("dados", profissa);
                                     startActivity(intent);
                                 }
                             });
