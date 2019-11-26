@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -64,6 +65,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
 
             EditText editTextNome, editTextTelefone, editTextCpf, editTextDataNascimento, editTextEmail, editTextConfirmarEmail, editTextSenha, editTextConfirmarSenha,
             editTextDescricao, editTextEnderecoNomeRua, editTextEnderecoNumero, editTextEnderecoBairro, editTextEnderecoCidade, editTextEnderecoEstado;
+            CheckBox checkBox1, checkBox2, checkBox3;
 
             @Override
             public void onClick(View v) {
@@ -82,6 +84,10 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 this.editTextEnderecoBairro = findViewById(R.id.editTextEnderecoBairro);
                 this.editTextEnderecoCidade = findViewById(R.id.editTextEnderecoCidade);
                 this.editTextEnderecoEstado = findViewById(R.id.editTextEnderecoEstado);
+                this.checkBox1 = findViewById(R.id.checkBoxCartaoDeCredito);
+                this.checkBox2 = findViewById(R.id.checkBoxCartaoDeDebito);
+                this.checkBox3 = findViewById(R.id.checkBoxDinheiro);
+
 
 
                 final String nome = editTextNome.getText().toString();
@@ -93,24 +99,32 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 final String senha = editTextSenha.getText().toString();
                 final String confirmarSenha = editTextConfirmarSenha.getText().toString();
                 final String descricao = editTextDescricao.getText().toString();
-                final String nomeRua = editTextEnderecoNomeRua.getText().toString();
-                final String numero = editTextEnderecoNumero.getText().toString();
-                final String bairro = editTextEnderecoBairro.getText().toString();
-                final String cidade = editTextEnderecoCidade.getText().toString();
-                final String estado = editTextEnderecoEstado.getText().toString();
 
+
+
+                Profissional profi = getIntent().getExtras().getParcelable("Categoria");
+                String categoria =  profi.categoria;
                 Profissional profissional = new Profissional();
 
+                if(checkBox1.isChecked() == true){
+                    profissional.cartaoCredito = true;
+                }
+                if(checkBox2.isChecked() == true){
+                    profissional.cartaoDebito = true;
+                }
+                if(checkBox3.isChecked() == true){
+                    profissional.dinheiro = true;
+                }
+
+                profissional.categoria = categoria;
                 profissional.nome = nome;
                 profissional.telefone = telefone;
                 profissional.cpf = cpf;
                 profissional.dataNasc = dataNascimento;
                 profissional.email = email;
                 profissional.senha = senha;
-                profissional.descricao = senha;
-                profissional.endereco = estado + ", " + cidade + ", " + bairro + ", " + nomeRua + ", " + numero;
+                profissional.descricao = descricao;
 
-                bdRef.child("profissional").push().setValue(profissional);
 
                 Toast.makeText(FormCadastroProfissional.this,"Profissional cadastrado com sucesso.",Toast.LENGTH_LONG).show();
                 editTextNome.setText("");
@@ -123,16 +137,13 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 /*Intent intent = new Intent(FormCadastroProfissional.this, PerfilProfissional.class);
                 startActivity(intent);*/
 
-                AparelhosEletronicos aparelhosEletronicos = getIntent().getExtras().getParcelable("condiçao da classe");
-                int hahah = aparelhosEletronicos.condicao;
 
-                if (hahah == 1){
-                    geoLocate();
-                }
+                geoLocate(profissional);
+
             }
         });
     }
-    private void geoLocate(){
+    private void geoLocate(Profissional profissional){
         FirebaseApp.initializeApp(FormCadastroProfissional.this);
         FirebaseDatabase bd = FirebaseDatabase.getInstance();
         final DatabaseReference bdRef = bd.getReference();
@@ -163,18 +174,22 @@ public class FormCadastroProfissional extends AppCompatActivity {
             Address address = list.get(0);
             Log.d(TAG, "geoLocate: found a location: " + address.toString());
 
-            AparelhosEletronicos aparelhosEletronicos = new AparelhosEletronicos();
+            profissional.latitude = address.getLatitude();
+            profissional.longitude = address.getLongitude();
 
-            aparelhosEletronicos.condicao = 1;
-            aparelhosEletronicos.latitude = address.getLatitude();
-            aparelhosEletronicos.longitude = address.getLongitude();
-
-            bdRef.child("aparelhosEletronicos").push().setValue(aparelhosEletronicos);
-
-            Intent intent = new Intent(FormCadastroProfissional.this, PerfilProfissional.class);
-            startActivity(intent);
-
+            enviarAoBanco(profissional);
 
         }
+    }
+
+    private void enviarAoBanco(Profissional profissional){
+
+        FirebaseApp.initializeApp(FormCadastroProfissional.this);
+        FirebaseDatabase bd = FirebaseDatabase.getInstance();
+        final DatabaseReference bdRef = bd.getReference();
+
+        bdRef.child("profissional").push().setValue(profissional);
+
+        Intent intent = new Intent(FormCadastroProfissional.this, PerfilProfissional.class);
     }
 }

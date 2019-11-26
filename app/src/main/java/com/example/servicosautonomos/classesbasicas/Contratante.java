@@ -11,6 +11,8 @@ public class Contratante implements Parcelable {
     public String email;
     public String senha;
 
+    public String endereco;
+
     public Contratante() {
 
     }
@@ -19,6 +21,7 @@ public class Contratante implements Parcelable {
         nome = p.readString();
         telefone = p.readString();
         cpf = p.readString();
+        endereco = p.readString();
         nascimento = p.readString();
         email = p.readString();
         senha = p.readString();
@@ -51,6 +54,14 @@ public class Contratante implements Parcelable {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getCpf() {
@@ -95,6 +106,7 @@ public class Contratante implements Parcelable {
         dest.writeString(nome);
         dest.writeString(telefone);
         dest.writeString(cpf);
+        dest.writeString(endereco);
         dest.writeString(nascimento);
         dest.writeString(email);
         dest.writeString(senha);

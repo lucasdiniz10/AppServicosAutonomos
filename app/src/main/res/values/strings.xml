@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Serviços Autônomos</string>
     <string name="title_activity_maps">Map</string>
+    <string name="err_nome">Preencha seu nome</string>
+    <string name="err_nome2">Nome deve conter apenas letras</string>
+    <string name="err_telefone">Telefone</string>
+    <string name="err_cpf">CPF</string>
+    <string name="err_data">Data</string>
+    <string name="err_email">E-mail</string>
+
 </resources>

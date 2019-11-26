@@ -1,6 +1,9 @@
 package com.example.servicosautonomos.classesbasicas;
 
-public class Profissional {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Profissional implements Parcelable {
     public String nome;
     public String telefone ;
     public String cpf;
@@ -8,10 +11,42 @@ public class Profissional {
     public String email;
     public String senha;
     public String descricao;
-    public Boolean dinheiro;
-    public Boolean cartaoDebito;
-    public Boolean cartaoCredito;
-    public String endereco;
+    public String categoria;
+    public Double latitude;
+    public Double longitude;
+    public boolean dinheiro;
+    public boolean cartaoDebito;
+    public boolean cartaoCredito;
+
+
+    private Profissional(Parcel p){
+         nome = p.readString();
+         telefone = p.readString() ;
+         cpf = p.readString();
+         dataNasc = p.readString();
+         email = p.readString();
+         senha = p.readString();
+         descricao = p.readString();
+         categoria = p.readString();
+         latitude = p.readDouble();
+         longitude = p.readDouble();
+         dinheiro = (p.readInt() == 0) ? false : true;
+         cartaoDebito = (p.readInt() == 0) ? false : true;
+         cartaoCredito = (p.readInt() == 0) ? false : true;
+
+    }
+
+    public static final Parcelable.Creator<Profissional>
+            CREATOR = new Parcelable.Creator<Profissional>(){
+
+        public Profissional createFromParcel(Parcel in){
+            return  new Profissional(in);
+        }
+
+        public Profissional[] newArray(int size){
+            return new Profissional[size];
+        }
+    };
 
     public Profissional() {
     }
@@ -72,35 +107,49 @@ public class Profissional {
         this.descricao = descricao;
     }
 
-    public Boolean getDinheiro() {
+    public boolean isDinheiro() {
         return dinheiro;
     }
 
-    public void setDinheiro(Boolean dinheiro) {
+    public void setDinheiro(boolean dinheiro) {
         this.dinheiro = dinheiro;
     }
 
-    public Boolean getCartaoDebito() {
+    public boolean isCartaoDebito() {
         return cartaoDebito;
     }
 
-    public void setCartaoDebito(Boolean cartaoDebito) {
+    public void setCartaoDebito(boolean cartaoDebito) {
         this.cartaoDebito = cartaoDebito;
     }
 
-    public Boolean getCartaoCredito() {
+    public boolean isCartaoCredito() {
         return cartaoCredito;
     }
 
-    public void setCartaoCredito(Boolean cartaoCredito) {
+    public void setCartaoCredito(boolean cartaoCredito) {
         this.cartaoCredito = cartaoCredito;
     }
 
-    public String getEndereco() {
-        return endereco;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(nome);
+        parcel.writeString(telefone);
+        parcel.writeString(cpf);
+        parcel.writeString(dataNasc);
+        parcel.writeString(email);
+        parcel.writeString(senha);
+        parcel.writeString(descricao);
+        parcel.writeString(categoria);
+        parcel.writeDouble(latitude);
+        parcel.writeDouble(longitude);
+        parcel.writeInt(dinheiro ? 1 : 0);
+        parcel.writeInt(cartaoDebito ? 1 : 0);
+        parcel.writeInt(cartaoCredito ? 1 : 0);
     }
 }

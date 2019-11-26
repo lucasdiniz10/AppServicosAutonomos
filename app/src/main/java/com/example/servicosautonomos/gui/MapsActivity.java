@@ -13,13 +13,15 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.servicosautonomos.R;
-import com.example.servicosautonomos.classesbasicas.AparelhosEletronicos;
+import com.example.servicosautonomos.classesbasicas.Profissional;
+import com.example.servicosautonomos.classesbasicas.ReferenciaBotao;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -41,7 +43,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private boolean mLocationPermissionsGranted = true;
     private FusedLocationProviderClient mFusedLocationProviderClient;
-    ArrayList<AparelhosEletronicos> aparelhosLista = new ArrayList<>();
+    ArrayList<Profissional> profissionalLista = new ArrayList<>();
     private static final float DEFAULT_ZOOM = 13f;
     private static final String TAG = "MapsActivity";
 
@@ -76,41 +78,84 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         FirebaseApp.initializeApp(MapsActivity.this);
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference bdRef = database.getReference();
-        FirebaseDatabase.getInstance().getReference("aparelhosEletronicos").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("profissional").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                aparelhosLista.clear();
+                profissionalLista.clear();
                 List<String> keys = new ArrayList<>();
                 for (DataSnapshot key : dataSnapshot.getChildren()) {
                     keys.add(key.getKey());
-                    AparelhosEletronicos aparelhosEletronicos = key.getValue(AparelhosEletronicos.class);
-                    aparelhosLista.add(aparelhosEletronicos);
+                    Profissional profissional = key.getValue(Profissional.class);
+                    profissionalLista.add(profissional);
                 }
-                int size = aparelhosLista.size();
+                int size = profissionalLista.size();
                 int cont = 0;
 
                 do {
-                    AparelhosEletronicos ap = (AparelhosEletronicos) aparelhosLista.get(cont);
-                    Double lat = ap.latitude;
-                    Double lon = ap.longitude;
+                    final ReferenciaBotao referenciaBotao = getIntent().getExtras().getParcelable("Referencia");
 
-                    LatLng latLng = new LatLng(lat,lon);
+                    if(referenciaBotao.aparelhosEletronicos = true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("aparelhosEletronicos")){
+                            Double lat = profissa.latitude;
+                            Double lon = profissa.longitude;
 
-                    MarkerOptions options = new MarkerOptions().position(latLng).title("test" + cont);
-                    mMap.addMarker(options);
+                            LatLng latLng = new LatLng(lat,lon);
 
-                    float zoom = DEFAULT_ZOOM;
+                            MarkerOptions options = new MarkerOptions()
+                                    .position(latLng)
+                                    .title(profissa.nome)
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
+                            mMap.addMarker(options);
 
-                    mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                        @Override
-                        public void onInfoWindowClick(Marker marker) {
-                            int i = 1;
-                            Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
-                            i += 1;
-                            Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
-                            startActivity(intent);
+                            float zoom = DEFAULT_ZOOM;
+
+                            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                                @Override
+                                public void onInfoWindowClick(Marker marker) {
+                                    int i = 1;
+                                    Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
+                                    i += 1;
+
+                                    Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
+                                    intent.putExtra("dados", profissa);
+                                    startActivity(intent);
+                                }
+                            });
                         }
-                    });
+
+                    }
+                    if(referenciaBotao.eletrodomensticos = true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("eletrodomesticos")){
+                            Double lat = profissa.latitude;
+                            Double lon = profissa.longitude;
+
+                            LatLng latLng = new LatLng(lat,lon);
+
+                            MarkerOptions options = new MarkerOptions()
+                                    .position(latLng)
+                                    .title(profissa.nome)
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
+                            mMap.addMarker(options);
+
+                            float zoom = DEFAULT_ZOOM;
+
+                            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                                @Override
+                                public void onInfoWindowClick(Marker marker) {
+                                    int i = 1;
+                                    Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
+                                    i += 1;
+
+                                    Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
+                                    intent.putExtra("usuario", profissa);
+                                    startActivity(intent);
+                                }
+                            });
+                        }
+
+                    }
 
                     cont++;
                 }while (cont < size);
