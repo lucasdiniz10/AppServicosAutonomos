@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="28dp"
-                android:paddingHorizontal="75dp"
+                android:paddingHorizontal="45dp"
                 android:fontFamily="@font/regular"
                 android:text="Após o cadastro, você poderá alterar as suas  sub-categorias"
                 android:textAlignment="center"
