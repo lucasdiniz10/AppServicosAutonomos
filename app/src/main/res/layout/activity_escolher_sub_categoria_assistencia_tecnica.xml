@@ -52,7 +52,7 @@
                 android:layout_marginBottom="8dp"
                 android:paddingHorizontal="50dp"
                 android:fontFamily="@font/bold"
-                android:text="Escolha a sub-categoria  dos serviços que você realiza."
+                android:text="Escolha a sub-categoria dos serviços que você realiza."
                 android:textAlignment="center"
                 android:textColor="#73B650"
                 android:textSize="20sp"
