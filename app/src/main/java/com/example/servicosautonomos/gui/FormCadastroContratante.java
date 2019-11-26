@@ -12,13 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.servicosautonomos.R;
 import com.example.servicosautonomos.classesbasicas.Contratante;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FormCadastroContratante extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
     private static final String TAG = "Contratante";
     Button buttonLogin;
 
