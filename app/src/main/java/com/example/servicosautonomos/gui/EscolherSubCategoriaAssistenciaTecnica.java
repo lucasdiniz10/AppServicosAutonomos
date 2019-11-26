@@ -50,7 +50,23 @@ public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Profissional profissional = new Profissional();
+                profissional.nome = "0";
+                profissional.telefone = "0";
+                profissional.cpf = "0";
+                profissional.dataNasc = "0";
+                profissional.email = "0";
+                profissional.senha = "0";
+                profissional.descricao = "0";
+                profissional.categoria = "eletrodomesticos";
+                profissional.latitude = Double.valueOf(0);
+                profissional.longitude = Double.valueOf(0);
+                profissional.dinheiro = true;
+                profissional.cartaoDebito = true;
+                profissional.cartaoCredito = true;
+
                 Intent intent = new Intent(EscolherSubCategoriaAssistenciaTecnica.this, FormCadastroProfissional.class);
+                intent.putExtra("Categoria", profissional);
                 startActivity(intent);
             }
         });
