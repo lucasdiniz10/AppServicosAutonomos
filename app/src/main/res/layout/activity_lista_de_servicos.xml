@@ -6,27 +6,601 @@
     android:layout_height="match_parent"
     tools:context=".gui.ListaDeServicos">
 
-    <Button
-        android:id="@+id/aparelhosEletronic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="aparelhosEletronic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/buttonEletroDomesticos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Eletro-Domésticos"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aparelhosEletronic"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewListadeServicos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/bold"
+                android:text="Lista de Serviços"
+                android:textAlignment="center"
+                android:textColor="#3A6A75"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewSubTituloCategoria"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.09"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.271" />
+
+            <TextView
+                android:id="@+id/textViewSubTituloCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/bold"
+                android:paddingHorizontal="70dp"
+                android:text="Escolha o serviço que você deseja contratar."
+                android:textAlignment="center"
+                android:textColor="#73B650"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewAparelhosEletronicosLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Aparelhos Eletrônicos"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/aparelhosEletronic"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.464"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewEletrodomesticosLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Eletrodomésticos"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonEletroDomesticos"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria2"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewInformaticaeTecnologiaLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Informática e Tecnologia"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonInformaticaeTecnologia"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria3"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewFunilariaePinturaLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Funilaria e Pintura"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonFunilariaePintura"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria4"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria4"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria4"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewVidracariaAutomotivaLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Vidraçaria Automotiva"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria5"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria5"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria5"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria5"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonVidracariaAutomotiva"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria5"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria5"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria5"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria5"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria5"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewMecanicaLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Mecânica"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria6"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria6"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria6"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria6"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonMecanica"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria6"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria6"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria6"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria6"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria6"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewConstrucaoLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Construção"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria7"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria7"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria7"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria7"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonConstrucao"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria7"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria7"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria7"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria7"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria7"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewServicosGeraisLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Serviços Gerais"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria8"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria8"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria8"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria8"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonServicasGerais"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria8"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria8"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria8"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria8"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria8"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewTecnologiaLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Tecnologia"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria9"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria9"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria9"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria9"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonTecnologia"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria9"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria9"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria9"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria9"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria9"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewGraficaLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Gráfica"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria10"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria10"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria10"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria10"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonGrafica"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria10"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria10"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria10"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria10"
+                app:layout_constraintVertical_bias="0.75" />
+
+            //--------
+
+            <ImageView
+                android:id="@+id/imageViewBaseSubCategoria11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewBaseSubCategoria10"
+                app:srcCompat="@drawable/categoria" />
+
+            <TextView
+                android:id="@+id/textViewAudioVisualLista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Áudio/Visual"
+                android:textColor="#4C4C4C"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria11"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria11"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria11"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria11"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <Button
+                android:id="@+id/buttonAudioVisual"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_categoria"
+                android:fontFamily="@font/bold"
+                android:shadowRadius="12"
+                android:text="Escolher Serviço"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria11"
+                app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria11"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria11"
+                app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria11"
+                app:layout_constraintVertical_bias="0.75" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
