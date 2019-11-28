@@ -18,7 +18,7 @@ import com.example.servicosautonomos.classesbasicas.ReferenciaBotao;
 
 public class ListaDeServicos extends AppCompatActivity {
 
-    Button button, buttonEletrodomestico, botaoTelefonia, botaoFunilaria, botaoVidracaria, botaoMecanica, botaoConstrucao, botaoServicosGerais, botaoTecnologia, botaoGrafica, botaoAudioVisual;
+    Button button, buttonEletrodomestico, botaoInformaticaTelefonia, botaoFunilaria, botaoVidracaria, botaoMecanica, botaoConstrucao, botaoServicosGerais, botaoTecnologia, botaoGrafica, botaoAudioVisual;
     private boolean mLocationPermissionsGranted = false;
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -43,6 +43,8 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = false;
                 referenciaBotao.informaticaTelefonia = false;
                 referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
                 referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = false;
                 referenciaBotao.tecnologia = false;
@@ -66,6 +68,8 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = true;
                 referenciaBotao.informaticaTelefonia = false;
                 referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
                 referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = false;
                 referenciaBotao.tecnologia = false;
@@ -78,9 +82,9 @@ public class ListaDeServicos extends AppCompatActivity {
             }
         });
 
-        botaoTelefonia = findViewById(R.id.buttonInformaticaeTecnologia);
+        botaoInformaticaTelefonia = findViewById(R.id.buttonInformaticaeTecnologia);
 
-        botaoTelefonia.setOnClickListener(new View.OnClickListener() {
+        botaoInformaticaTelefonia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ReferenciaBotao referenciaBotao = new ReferenciaBotao();
@@ -89,6 +93,8 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = false;
                 referenciaBotao.informaticaTelefonia = true;
                 referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
                 referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = false;
                 referenciaBotao.tecnologia = false;
@@ -112,6 +118,8 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = false;
                 referenciaBotao.informaticaTelefonia = false;
                 referenciaBotao.funilariaPintura = true;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
                 referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = false;
                 referenciaBotao.tecnologia = false;
@@ -124,9 +132,9 @@ public class ListaDeServicos extends AppCompatActivity {
             }
         });
 
-        botaoConstrucao = findViewById(R.id.buttonFunilariaePintura);
+        botaoVidracaria = findViewById(R.id.buttonVidracariaAutomotiva);
 
-        botaoConstrucao.setOnClickListener(new View.OnClickListener() {
+        botaoVidracaria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ReferenciaBotao referenciaBotao = new ReferenciaBotao();
@@ -135,7 +143,9 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = false;
                 referenciaBotao.informaticaTelefonia = false;
                 referenciaBotao.funilariaPintura = false;
-                referenciaBotao.construcao = true;
+                referenciaBotao.vidracariaAutomotiva = true;
+                referenciaBotao.mecanica = false;
+                referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = false;
                 referenciaBotao.tecnologia = false;
                 referenciaBotao.grafica = false;
@@ -147,9 +157,9 @@ public class ListaDeServicos extends AppCompatActivity {
             }
         });
 
-        botaoServicosGerais = findViewById(R.id.buttonFunilariaePintura);
+        botaoMecanica = findViewById(R.id.buttonMecanica);
 
-        botaoServicosGerais.setOnClickListener(new View.OnClickListener() {
+        botaoMecanica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ReferenciaBotao referenciaBotao = new ReferenciaBotao();
@@ -158,6 +168,8 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = false;
                 referenciaBotao.informaticaTelefonia = false;
                 referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = true;
                 referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = true;
                 referenciaBotao.tecnologia = false;
@@ -170,7 +182,57 @@ public class ListaDeServicos extends AppCompatActivity {
             }
         });
 
-        botaoTecnologia = findViewById(R.id.buttonFunilariaePintura);
+        botaoConstrucao = findViewById(R.id.buttonConstrucao);
+
+        botaoConstrucao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReferenciaBotao referenciaBotao = new ReferenciaBotao();
+
+                referenciaBotao.aparelhosEletronicos = false;
+                referenciaBotao.eletrodomensticos = false;
+                referenciaBotao.informaticaTelefonia = false;
+                referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
+                referenciaBotao.construcao = true;
+                referenciaBotao.servicosGerais = false;
+                referenciaBotao.tecnologia = false;
+                referenciaBotao.grafica = false;
+                referenciaBotao.audioVisual = false;
+
+                Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
+                intent.putExtra("Referencia", referenciaBotao);
+                startActivity(intent);
+            }
+        });
+
+        botaoServicosGerais = findViewById(R.id.buttonServicosGerais);
+
+        botaoServicosGerais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReferenciaBotao referenciaBotao = new ReferenciaBotao();
+
+                referenciaBotao.aparelhosEletronicos = false;
+                referenciaBotao.eletrodomensticos = false;
+                referenciaBotao.informaticaTelefonia = false;
+                referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
+                referenciaBotao.construcao = false;
+                referenciaBotao.servicosGerais = true;
+                referenciaBotao.tecnologia = false;
+                referenciaBotao.grafica = false;
+                referenciaBotao.audioVisual = false;
+
+                Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
+                intent.putExtra("Referencia", referenciaBotao);
+                startActivity(intent);
+            }
+        });
+
+        botaoTecnologia = findViewById(R.id.buttonTecnologia);
 
         botaoTecnologia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,11 +243,13 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = false;
                 referenciaBotao.informaticaTelefonia = false;
                 referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
                 referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = false;
                 referenciaBotao.tecnologia = true;
                 referenciaBotao.grafica = false;
-                referenciaBotao.audioVisual = false;
+                referenciaBotao.audioVisual = true;
 
                 Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
                 intent.putExtra("Referencia", referenciaBotao);
@@ -193,7 +257,7 @@ public class ListaDeServicos extends AppCompatActivity {
             }
         });
 
-        botaoGrafica = findViewById(R.id.buttonFunilariaePintura);
+        botaoGrafica = findViewById(R.id.buttonGrafica);
 
         botaoGrafica.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -204,11 +268,13 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = false;
                 referenciaBotao.informaticaTelefonia = false;
                 referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
                 referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = false;
                 referenciaBotao.tecnologia = false;
                 referenciaBotao.grafica = true;
-                referenciaBotao.audioVisual = false;
+                referenciaBotao.audioVisual = true;
 
                 Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
                 intent.putExtra("Referencia", referenciaBotao);
@@ -216,7 +282,7 @@ public class ListaDeServicos extends AppCompatActivity {
             }
         });
 
-        botaoAudioVisual = findViewById(R.id.buttonFunilariaePintura);
+        botaoAudioVisual = findViewById(R.id.buttonAudioVisual);
 
         botaoAudioVisual.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,6 +293,8 @@ public class ListaDeServicos extends AppCompatActivity {
                 referenciaBotao.eletrodomensticos = false;
                 referenciaBotao.informaticaTelefonia = false;
                 referenciaBotao.funilariaPintura = false;
+                referenciaBotao.vidracariaAutomotiva = false;
+                referenciaBotao.mecanica = false;
                 referenciaBotao.construcao = false;
                 referenciaBotao.servicosGerais = false;
                 referenciaBotao.tecnologia = false;
