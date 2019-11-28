@@ -87,15 +87,14 @@
 
             <TextView
                 android:id="@+id/textViewAssistenciaTecnica"
-                android:layout_width="171dp"
-                android:layout_height="33dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
                 android:text="Assistência Técnica"
                 android:textColor="#4C4C4C"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
-                app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.13" />
@@ -110,8 +109,7 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@+id/imageViewBaseSubCategoria"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewAssistenciaTecnica"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.32999998" />
 
@@ -155,12 +153,12 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
                 android:text="Automóveis"
+                android:textAlignment="center"
                 android:textColor="#4C4C4C"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAutomoveis"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.13" />
 
@@ -174,7 +172,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
-                app:layout_constraintHorizontal_bias="0.42"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.32999998" />
@@ -222,8 +219,8 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoReformaseReparos"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.13" />
 
@@ -235,11 +232,12 @@
                 android:gravity=""
                 android:paddingRight="30dp"
                 android:text="Pedreiro, Eletricista, Encanador, Decorador, Pintor."
+                android:textAlignment="center"
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
-                app:layout_constraintHorizontal_bias="0.565"
+                app:layout_constraintHorizontal_bias="0.78"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.33" />
@@ -288,8 +286,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria4"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria4"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoDesigneTecnologia"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria4"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria4"
                 app:layout_constraintVertical_bias="0.13" />
 
@@ -304,7 +301,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria4"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria4"
-                app:layout_constraintHorizontal_bias="0.404"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria4"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria4"
                 app:layout_constraintVertical_bias="0.32999998" />
