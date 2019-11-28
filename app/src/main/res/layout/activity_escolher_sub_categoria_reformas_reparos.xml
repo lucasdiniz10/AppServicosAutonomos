@@ -103,8 +103,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoConstrucao"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.19999999" />
 
@@ -118,7 +117,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
-                app:layout_constraintHorizontal_bias="0.57"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.36" />
@@ -166,8 +164,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoSevicosGerais"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.19999999" />
 
@@ -181,7 +178,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
-                app:layout_constraintHorizontal_bias="0.445"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.383" />
