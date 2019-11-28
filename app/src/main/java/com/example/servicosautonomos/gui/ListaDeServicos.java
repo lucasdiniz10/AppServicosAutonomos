@@ -66,7 +66,7 @@ public class ListaDeServicos extends AppCompatActivity {
             }
         });
 
-        botaoTelefonia = findViewById(R.id.buttonTelefonia);
+        botaoTelefonia = findViewById(R.id.buttonInformaticaeTecnologia);
 
         botaoTelefonia.setOnClickListener(new View.OnClickListener() {
             @Override
