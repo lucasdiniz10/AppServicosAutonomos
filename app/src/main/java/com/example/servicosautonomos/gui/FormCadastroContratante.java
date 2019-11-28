@@ -12,9 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.basgeekball.awesomevalidation.AwesomeValidation;
-import com.basgeekball.awesomevalidation.ValidationStyle;
-import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.servicosautonomos.R;
 import com.example.servicosautonomos.classesbasicas.Contratante;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,7 +35,6 @@ public class FormCadastroContratante extends AppCompatActivity implements View.O
 
     Button buttonLogin;
     private FirebaseAuth firebaseAuth;
-    private AwesomeValidation awesomeValidation;
 
 
 
@@ -47,7 +43,6 @@ public class FormCadastroContratante extends AppCompatActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_cadastro_contratante);
 
-        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
         //initializing firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -106,37 +101,21 @@ public class FormCadastroContratante extends AppCompatActivity implements View.O
         final String email = editTextEmail.getText().toString();
         final String confirmarEmail = editTextConfirmarEmail.getText().toString();
 
-        if(TextUtils.isEmpty(nome)){
-            awesomeValidation.addValidation(this, R.id.editTextNome, RegexTemplate.NOT_EMPTY, R.string.err_nome);
-            return;
-        }
-
-        {
-            awesomeValidation.addValidation(this, R.id.editTextNome, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.err_nome2);
-        }
-
-        if(TextUtils.isEmpty(telefone)){
-            awesomeValidation.addValidation(this, R.id.editTextTelefone, "^[+]?[0-9]{10,13}$", R.string.err_telefone);
-            return;
-        }
-
-        if(TextUtils.isEmpty(cpf)) {
+        if(TextUtils.isEmpty(nome) || TextUtils.isEmpty(telefone) || TextUtils.isEmpty(cpf) ||
+                TextUtils.isEmpty(email) || TextUtils.isEmpty(confirmarEmail) ){
 
 
         }
 
-        if(TextUtils.isEmpty(email)){
-
-        }
 
         if(!TextUtils.equals(email,confirmarEmail)){
 
         }
 
-        awesomeValidation.addValidation(this, R.id.editTextDataNascimento, "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$", R.string.err_data);
+       // awesomeValidation.addValidation(this, R.id.editTextDataNascimento, "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$", R.string.err_data);
 
-        awesomeValidation.addValidation(this, R.id.editTextEmail, Patterns.EMAIL_ADDRESS, R.string.err_email);
-        awesomeValidation.addValidation(this, R.id.editTextConfirmarEmail, Patterns.EMAIL_ADDRESS, R.string.err_email);
+        //awesomeValidation.addValidation(this, R.id.editTextEmail, Patterns.EMAIL_ADDRESS, R.string.err_email);
+        //awesomeValidation.addValidation(this, R.id.editTextConfirmarEmail, Patterns.EMAIL_ADDRESS, R.string.err_email);
 
         /*String regexPassword = ".{8,}";
         awesomeValidation.addValidation(this, R.id.etPassword, regexPassword, R.string.invalid_password);
