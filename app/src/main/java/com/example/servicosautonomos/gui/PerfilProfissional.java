@@ -11,7 +11,7 @@ import com.example.servicosautonomos.classesbasicas.Profissional;
 
 public class PerfilProfissional extends AppCompatActivity {
 
-    TextView nome, telefone, endereco, dataNasc, email, servicoOferecido, dinheiro, cartaoCredito, cartaoDebito;
+    TextView nome, telefone, endereco, dataNasc, email, servicoOferecido, descricao, dinheiro, cartaoCredito, cartaoDebito;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class PerfilProfissional extends AppCompatActivity {
         dinheiro = findViewById(R.id.textViewPagamentoDinheiro);
         cartaoCredito = findViewById(R.id.textViewPagamentoCredito);
         cartaoDebito = findViewById(R.id.textViewPagamentoDebito);
+        descricao = findViewById(R.id.textViewDescricao);
 
         nome.setText(profissional.nome);
         telefone.setText(profissional.telefone);
@@ -36,6 +37,7 @@ public class PerfilProfissional extends AppCompatActivity {
         dataNasc.setText(profissional.dataNasc);
         email.setText(profissional.email);
         servicoOferecido.setText(profissional.categoria);
+        descricao.setText(profissional.descricao);
 
         if (profissional.dinheiro == false){
             dinheiro.setTextColor(Color.parseColor("#cecece"));
