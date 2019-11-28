@@ -550,7 +550,7 @@
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria10"
                 app:layout_constraintVertical_bias="0.75" />
 
-            //--------
+
 
             <ImageView
                 android:id="@+id/imageViewBaseSubCategoria11"
