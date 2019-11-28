@@ -24,30 +24,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-<<<<<<< HEAD
-    <Button
-        android:id="@+id/buttonEletroDomesticos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Eletrodomésticos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aparelhosEletronic" />
-
-    <Button
-        android:id="@+id/buttonTelefonia"
-        android:layout_width="167dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="68dp"
-        android:text="Informática e Telefonia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEletroDomesticos"
-        app:layout_constraintVertical_bias="0.0" />
-=======
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/listView"
             android:layout_width="match_parent"
@@ -574,7 +550,7 @@
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria10"
                 app:layout_constraintVertical_bias="0.75" />
 
-            //--------
+
 
             <ImageView
                 android:id="@+id/imageViewBaseSubCategoria11"
@@ -626,6 +602,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
->>>>>>> 91466cbc5ba97ebebd5574d1f571632c78dd5caa
 
 </androidx.constraintlayout.widget.ConstraintLayout>
