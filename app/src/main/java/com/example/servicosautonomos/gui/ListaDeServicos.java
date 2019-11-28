@@ -18,7 +18,7 @@ import com.example.servicosautonomos.classesbasicas.ReferenciaBotao;
 
 public class ListaDeServicos extends AppCompatActivity {
 
-    Button button, buttonEletrodomestico;
+    Button button, buttonEletrodomestico, botaoTelefonia;
     private boolean mLocationPermissionsGranted = false;
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -41,6 +41,7 @@ public class ListaDeServicos extends AppCompatActivity {
 
                 referenciaBotao.aparelhosEletronicos = true;
                 referenciaBotao.eletrodomensticos = false;
+                referenciaBotao.informaticaTelefonia = false;
 
                 Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
                 intent.putExtra("Referencia", referenciaBotao);
@@ -57,12 +58,31 @@ public class ListaDeServicos extends AppCompatActivity {
 
                 referenciaBotao.aparelhosEletronicos = false;
                 referenciaBotao.eletrodomensticos = true;
+                referenciaBotao.informaticaTelefonia = false;
 
                 Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
                 intent.putExtra("Referencia", referenciaBotao);
                 startActivity(intent);
             }
         });
+
+        botaoTelefonia = findViewById(R.id.buttonTelefonia);
+
+        botaoTelefonia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReferenciaBotao referenciaBotao = new ReferenciaBotao();
+
+                referenciaBotao.aparelhosEletronicos = false;
+                referenciaBotao.eletrodomensticos = false;
+                referenciaBotao.informaticaTelefonia = true;
+
+                Intent intent = new Intent(ListaDeServicos.this, MapsActivity.class);
+                intent.putExtra("Referencia", referenciaBotao);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

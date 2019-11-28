@@ -88,7 +88,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Profissional profissional = key.getValue(Profissional.class);
                     profissionalLista.add(profissional);
                 }
-                int size = profissionalLista.size();
+                final int size = profissionalLista.size();
                 int cont = 0;
 
                 do {
@@ -97,62 +97,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     if(referenciaBotao.aparelhosEletronicos == true){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("aparelhosEletronicos")){
-                            Double lat = profissa.latitude;
-                            Double lon = profissa.longitude;
-
-                            LatLng latLng = new LatLng(lat,lon);
-
-                            MarkerOptions options = new MarkerOptions()
-                                    .position(latLng)
-                                    .title(profissa.nome)
-                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
-                            mMap.addMarker(options);
-
-                            float zoom = DEFAULT_ZOOM;
-
-                            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                                @Override
-                                public void onInfoWindowClick(Marker marker) {
-                                    int i = 1;
-                                    Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
-                                    i += 1;
-
-                                    Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
-                                    intent.putExtra("dados", profissa);
-                                    startActivity(intent);
-                                }
-                            });
+                            putMarker(profissa);
                         }
 
                     }
                     if(referenciaBotao.eletrodomensticos == true){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("eletrodomesticos")){
-                            Double lat = profissa.latitude;
-                            Double lon = profissa.longitude;
+                            putMarker(profissa);
 
-                            LatLng latLng = new LatLng(lat,lon);
 
-                            MarkerOptions options = new MarkerOptions()
-                                    .position(latLng)
-                                    .title(profissa.nome)
-                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
-                            mMap.addMarker(options);
-
-                            float zoom = DEFAULT_ZOOM;
-
-                            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                                @Override
-                                public void onInfoWindowClick(Marker marker) {
-                                    int i = 1;
-                                    Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
-                                    i += 1;
-
-                                    Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
-                                    intent.putExtra("dados", profissa);
-                                    startActivity(intent);
-                                }
-                            });
                         }
 
                     }
@@ -160,12 +114,45 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     cont++;
                 }while (cont < size);
 
+
+                mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                    @Override
+                    public void onInfoWindowClick(Marker marker) {
+                        int cont2 = 0;
+                        int size1 = profissionalLista.size();
+                        do {
+                            Profissional profissa =  profissionalLista.get(cont2);
+
+                            if (marker.getTitle().equals(profissa.nome)){
+                                Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
+                                intent.putExtra("dados", profissa);
+                                startActivity(intent);
+                            }
+                            cont2++;
+                        }while (cont2 < size1);
+                    }
+                });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+    }
+
+    private void putMarker(final Profissional profissional){
+        Double lat = profissional.latitude;
+        Double lon = profissional.longitude;
+
+        LatLng latLng = new LatLng(lat,lon);
+
+        final MarkerOptions options = new MarkerOptions()
+                .position(latLng)
+                .title(profissional.nome)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
+        mMap.addMarker(options);
+
     }
 
     private void getDeviceLocation(){

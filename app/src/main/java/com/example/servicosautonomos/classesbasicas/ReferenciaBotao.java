@@ -6,11 +6,14 @@ import android.os.Parcelable;
 public class ReferenciaBotao implements Parcelable {
     public boolean aparelhosEletronicos;
     public boolean eletrodomensticos;
+    public boolean informaticaTelefonia;
+
 
     private ReferenciaBotao(Parcel p){
 
         aparelhosEletronicos = (p.readInt() == 0) ? false : true;
         eletrodomensticos = (p.readInt() == 0) ? false : true;
+        informaticaTelefonia = (p.readInt() == 0) ? false : true;
 
     }
 
@@ -54,5 +57,6 @@ public class ReferenciaBotao implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(aparelhosEletronicos ? 1 : 0);
         parcel.writeInt(eletrodomensticos ? 1 : 0);
+        parcel.writeInt(informaticaTelefonia ? 1 : 0);
     }
 }

@@ -21,12 +21,23 @@
         android:id="@+id/buttonEletroDomesticos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Eletro-Domésticos"
+        android:layout_marginTop="68dp"
+        android:text="Eletrodomésticos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aparelhosEletronic" />
+
+    <Button
+        android:id="@+id/buttonTelefonia"
+        android:layout_width="167dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="68dp"
+        android:text="Informática e Telefonia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aparelhosEletronic"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonEletroDomesticos"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
