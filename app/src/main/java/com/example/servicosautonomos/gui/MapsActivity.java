@@ -13,7 +13,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.servicosautonomos.R;
-import com.example.servicosautonomos.classesbasicas.AparelhosEletronicos;
 import com.example.servicosautonomos.classesbasicas.Profissional;
 import com.example.servicosautonomos.classesbasicas.ReferenciaBotao;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -86,23 +85,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 List<String> keys = new ArrayList<>();
                 for (DataSnapshot key : dataSnapshot.getChildren()) {
                     keys.add(key.getKey());
-<<<<<<< HEAD
-                    AparelhosEletronicos aparelhosEletronicos = key.getValue(AparelhosEletronicos.class);
-                    aparelhosLista.add(aparelhosEletronicos);
-                }
-                int size = aparelhosLista.size();
-                int contador = 0;
-                for (int i =0;  i < size; i++){
-
-                    AparelhosEletronicos ap = (AparelhosEletronicos) aparelhosLista.get(contador);
-                    Double lat = ap.latitude;
-                    Double lon = ap.longitude;
-                    mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)));
-                    contador++;
-=======
                     Profissional profissional = key.getValue(Profissional.class);
                     profissionalLista.add(profissional);
->>>>>>> master
                 }
                 int size = profissionalLista.size();
                 int cont = 0;
@@ -110,7 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 do {
                     final ReferenciaBotao referenciaBotao = getIntent().getExtras().getParcelable("Referencia");
 
-                    if(referenciaBotao.aparelhosEletronicos = true){
+                    if(referenciaBotao.aparelhosEletronicos == true){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("aparelhosEletronicos")){
                             Double lat = profissa.latitude;
@@ -134,7 +118,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     i += 1;
 
                                     Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
-                                    intent.putExtra("usuario", profissa);
+                                    intent.putExtra("dados", profissa);
+                                    startActivity(intent);
+                                }
+                            });
+                        }
+
+                    }
+                    if(referenciaBotao.eletrodomensticos == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("eletrodomesticos")){
+                            Double lat = profissa.latitude;
+                            Double lon = profissa.longitude;
+
+                            LatLng latLng = new LatLng(lat,lon);
+
+                            MarkerOptions options = new MarkerOptions()
+                                    .position(latLng)
+                                    .title(profissa.nome)
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
+                            mMap.addMarker(options);
+
+                            float zoom = DEFAULT_ZOOM;
+
+                            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                                @Override
+                                public void onInfoWindowClick(Marker marker) {
+                                    int i = 1;
+                                    Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
+                                    i += 1;
+
+                                    Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
+                                    intent.putExtra("dados", profissa);
                                     startActivity(intent);
                                 }
                             });

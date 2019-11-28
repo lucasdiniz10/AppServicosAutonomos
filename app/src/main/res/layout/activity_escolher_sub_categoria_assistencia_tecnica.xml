@@ -8,10 +8,12 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="394dp"
-        android:layout_height="654dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,8 +29,8 @@
 
             <TextView
                 android:id="@+id/textViewSubCategoriaAssistenciaTecnica"
-                android:layout_width="196dp"
-                android:layout_height="29dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/bold"
                 android:text="Assistência Técnica"
@@ -44,12 +46,13 @@
 
             <TextView
                 android:id="@+id/textViewSubTitulo"
-                android:layout_width="284dp"
-                android:layout_height="64dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="8dp"
+                android:paddingHorizontal="50dp"
                 android:fontFamily="@font/bold"
-                android:text="Escolha a sub-categoria  dos serviços que você realiza."
+                android:text="Escolha a sub-categoria dos serviços que você realiza."
                 android:textAlignment="center"
                 android:textColor="#73B650"
                 android:textSize="20sp"
@@ -61,10 +64,11 @@
 
             <TextView
                 android:id="@+id/textViewSubTitulo2"
-                android:layout_width="282dp"
-                android:layout_height="42dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="28dp"
+                android:paddingHorizontal="45dp"
                 android:fontFamily="@font/regular"
                 android:text="Após o cadastro, você poderá alterar as suas  sub-categorias"
                 android:textAlignment="center"
@@ -87,6 +91,7 @@
                 android:layout_marginRight="8dp"
                 app:layout_constraintBottom_toTopOf="@+id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/categoria" />
@@ -240,7 +245,7 @@
                 android:layout_height="35dp"
                 android:fontFamily="@font/regular"
                 android:gravity=""
-                android:text="Cabeamento e Redes, Celular, Computador Desktop, Impressora, Notebooks, Teblet, Telefone(não celular), Etc."
+                android:text="Cabeamento e Redes, Celular, Computador Desktop, Impressora, Notebooks, Etc."
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"

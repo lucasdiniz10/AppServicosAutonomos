@@ -10,6 +10,7 @@ public class Profissional implements Parcelable {
     public String dataNasc;
     public String email;
     public String senha;
+    public String endereco;
     public String descricao;
     public String categoria;
     public Double latitude;
@@ -26,6 +27,7 @@ public class Profissional implements Parcelable {
          dataNasc = p.readString();
          email = p.readString();
          senha = p.readString();
+         endereco = p.readString();
          descricao = p.readString();
          categoria = p.readString();
          latitude = p.readDouble();
@@ -49,6 +51,14 @@ public class Profissional implements Parcelable {
     };
 
     public Profissional() {
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -144,6 +154,7 @@ public class Profissional implements Parcelable {
         parcel.writeString(dataNasc);
         parcel.writeString(email);
         parcel.writeString(senha);
+        parcel.writeString(endereco);
         parcel.writeString(descricao);
         parcel.writeString(categoria);
         parcel.writeDouble(latitude);
