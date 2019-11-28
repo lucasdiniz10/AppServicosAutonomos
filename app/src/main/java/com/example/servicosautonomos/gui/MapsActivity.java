@@ -99,16 +99,60 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         if (profissa.categoria.equals("aparelhosEletronicos")){
                             putMarker(profissa);
                         }
-
                     }
                     if(referenciaBotao.eletrodomensticos == true){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("eletrodomesticos")){
                             putMarker(profissa);
-
-
                         }
-
+                    }
+                    if(referenciaBotao.informaticaTelefonia == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Informática e Telefonia")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.funilariaPintura == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Funilária e Pintura")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.vidracariaAutomotiva == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Vidraçaria Automotiva")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.construcao == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Construção")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.servicosGerais == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Serviços Gerais")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.tecnologia == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Tecnologia")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.grafica == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Gráfica")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.audioVisual == true){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Áudio/Visual")){
+                            putMarker(profissa);
+                        }
                     }
 
                     cont++;

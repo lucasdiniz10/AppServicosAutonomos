@@ -86,7 +86,7 @@ public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
                 profissional.senha = "0";
                 profissional.endereco = "0";
                 profissional.descricao = "0";
-                profissional.categoria = "informaticaTelefonia";
+                profissional.categoria = "Informática e Telefonia";
                 profissional.latitude = Double.valueOf(0);
                 profissional.longitude = Double.valueOf(0);
                 profissional.dinheiro = true;
