@@ -86,7 +86,7 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:inputType="phone"
+                android:inputType="text"
                 android:text="Telefone com DDD"
                 android:textColor="#000000"
                 android:textSize="15sp"
@@ -104,7 +104,7 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:inputType="number"
+                android:inputType="text"
                 android:text="Cpf"
                 android:textColor="#000000"
                 android:textSize="15sp"
@@ -122,15 +122,33 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:inputType="date"
+                android:inputType="text"
                 android:text="Data de Nascimento"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewEndereco"
+                app:layout_constraintEnd_toEndOf="@+id/textViewEndereco"
+                app:layout_constraintHorizontal_bias="0.609"
+                app:layout_constraintStart_toStartOf="@+id/textViewEndereco"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCpf" />
+
+            <TextView
+                android:id="@+id/textViewEndereco"
+                android:layout_width="295dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:inputType="text"
+                android:text="Endereço"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewEmail"
                 app:layout_constraintEnd_toEndOf="@+id/textViewEmail"
                 app:layout_constraintHorizontal_bias="0.609"
                 app:layout_constraintStart_toStartOf="@+id/textViewEmail"
-                app:layout_constraintTop_toBottomOf="@+id/textViewCpf" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewDataNascimento" />
 
             <TextView
                 android:id="@+id/textViewEmail"
@@ -148,7 +166,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/textViewDescricao"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/textViewDescricao"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDataNascimento" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewEndereco" />
 
 
             <TextView
