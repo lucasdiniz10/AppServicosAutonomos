@@ -12,17 +12,18 @@ import com.example.servicosautonomos.classesbasicas.Profissional;
 
 public class EscolherSubCategoriaAutomoveis extends AppCompatActivity {
 
-    Button button, button2, button3;
+    Button button, button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_sub_categoria_automoveis);
 
-        button = (Button) findViewById(R.id.buttonEscolherSubCategoriaFunilariaePintura);
+        button = findViewById(R.id.buttonEscolherSubCategoriaFunilariaePintura);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -33,8 +34,8 @@ public class EscolherSubCategoriaAutomoveis extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "Funilária e Pintura";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;
@@ -45,11 +46,12 @@ public class EscolherSubCategoriaAutomoveis extends AppCompatActivity {
             }
         });
 
-        button2 = (Button) findViewById(R.id.buttonEscolherSubCategoriaVidracariaAutomotiva);
+        button2 = findViewById(R.id.buttonEscolherSubCategoriaVidracariaAutomotiva);
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -60,8 +62,8 @@ public class EscolherSubCategoriaAutomoveis extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "Vidraçaria Automotiva";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;
@@ -72,11 +74,12 @@ public class EscolherSubCategoriaAutomoveis extends AppCompatActivity {
             }
         });
 
-        button = (Button) findViewById(R.id.buttonEscolherSubCategoriaMecanica);
+        button = findViewById(R.id.buttonEscolherSubCategoriaMecanica);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -87,8 +90,8 @@ public class EscolherSubCategoriaAutomoveis extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "Mecãnica";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;

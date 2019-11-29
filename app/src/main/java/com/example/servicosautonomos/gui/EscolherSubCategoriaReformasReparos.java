@@ -19,10 +19,11 @@ public class EscolherSubCategoriaReformasReparos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_sub_categoria_reformas_reparos);
 
-        button = (Button)findViewById(R.id.buttonEscolherSubCategoriaConstrucao);
+        button = findViewById(R.id.buttonEscolherSubCategoriaConstrucao);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -33,8 +34,8 @@ public class EscolherSubCategoriaReformasReparos extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "Construção";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;
@@ -45,10 +46,11 @@ public class EscolherSubCategoriaReformasReparos extends AppCompatActivity {
             }
         });
 
-        button2 = (Button)findViewById(R.id.buttonEscolherSubCategoriaServicosGerais);
+        button2 = findViewById(R.id.buttonEscolherSubCategoriaServicosGerais);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -59,8 +61,8 @@ public class EscolherSubCategoriaReformasReparos extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "Serviços Gerais";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;

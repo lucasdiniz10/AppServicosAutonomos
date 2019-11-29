@@ -17,7 +17,9 @@ public class EscolherCategoria extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_categoria);
 
-        button = (Button)findViewById(R.id.buttonEscolherCategoriaAssistenciaTecnica);
+        //Botões para acessar as subcategorias
+
+        button = findViewById(R.id.buttonEscolherCategoriaAssistenciaTecnica);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +28,7 @@ public class EscolherCategoria extends AppCompatActivity {
             }
         });
 
-        button2 = (Button)findViewById(R.id.buttonEscolherCategoriaAutomoveis);
+        button2 = findViewById(R.id.buttonEscolherCategoriaAutomoveis);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,7 +37,7 @@ public class EscolherCategoria extends AppCompatActivity {
             }
         });
 
-        button3 = (Button)findViewById(R.id.buttonEscolherCategoriaReformaseReparos);
+        button3 = findViewById(R.id.buttonEscolherCategoriaReformaseReparos);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +46,7 @@ public class EscolherCategoria extends AppCompatActivity {
             }
         });
 
-        button4 = (Button)findViewById(R.id.buttonEscolherCategoriaDesigneTecnologia);
+        button4 = findViewById(R.id.buttonEscolherCategoriaDesigneTecnologia);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
