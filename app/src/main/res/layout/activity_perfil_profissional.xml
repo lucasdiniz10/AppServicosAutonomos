@@ -236,7 +236,7 @@
                 android:baselineAligned="false"
                 android:fontFamily="@font/bold"
                 android:shadowRadius="12"
-                android:text="Daqui vai p onde?"
+                android:text="Adicionar aos Contatos"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
