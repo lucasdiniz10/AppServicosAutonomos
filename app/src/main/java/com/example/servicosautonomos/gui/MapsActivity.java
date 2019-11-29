@@ -46,7 +46,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private boolean mLocationPermissionsGranted = true;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     ArrayList<Profissional> profissionalLista = new ArrayList<>();
-    private static final float DEFAULT_ZOOM = 13f;
+    private static final float DEFAULT_ZOOM = 14f;
     private static final String TAG = "MapsActivity";
     Button button;
 
