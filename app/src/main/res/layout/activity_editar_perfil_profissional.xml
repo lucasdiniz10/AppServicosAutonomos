@@ -68,8 +68,8 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:text="Nome"
                 android:inputType="textPersonName|textCapWords"
+                android:text="Nome"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewTelefone"
@@ -86,8 +86,8 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:text="Telefone com DDD"
                 android:inputType="phone"
+                android:text="Telefone com DDD"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewCpf"
@@ -104,8 +104,8 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:text="Cpf"
                 android:inputType="number"
+                android:text="Cpf"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewDataNascimento"
@@ -122,8 +122,8 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:text="Data de Nascimento"
                 android:inputType="date"
+                android:text="Data de Nascimento"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewEmail"
@@ -140,70 +140,16 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
+                android:inputType="textEmailAddress"
                 android:text="Email"
-                android:inputType="textEmailAddress"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewConfirmarEmail"
-                app:layout_constraintEnd_toEndOf="@+id/textViewConfirmarEmail"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/textViewConfirmarEmail"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDataNascimento" />
-
-            <TextView
-                android:id="@+id/textViewConfirmarEmail"
-                android:layout_width="295dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="32dp"
-                android:baselineAligned="false"
-                android:ems="10"
-                android:fontFamily="@font/regular"
-                android:text="Confirmar Email"
-                android:inputType="textEmailAddress"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewSenha"
-                app:layout_constraintEnd_toEndOf="@+id/textViewSenha"
-                app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@+id/textViewSenha"
-                app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
-
-            <TextView
-                android:id="@+id/textViewSenha"
-                android:layout_width="295dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="32dp"
-                android:baselineAligned="false"
-                android:ems="10"
-                android:fontFamily="@font/regular"
-                android:text="Senha"
-                android:inputType="text"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewConfirmarSenha"
-                app:layout_constraintEnd_toEndOf="@+id/textViewConfirmarSenha"
-                app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@+id/textViewConfirmarSenha"
-                app:layout_constraintTop_toBottomOf="@+id/textViewConfirmarEmail" />
-
-            <TextView
-                android:id="@+id/textViewConfirmarSenha"
-                android:layout_width="295dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
-                android:baselineAligned="false"
-                android:ems="10"
-                android:fontFamily="@font/regular"
-                android:text="Confirmar Senha"
-                android:inputType="text"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewDescricao"
                 app:layout_constraintEnd_toEndOf="@+id/textViewDescricao"
-                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/textViewDescricao"
-                app:layout_constraintTop_toBottomOf="@+id/textViewSenha" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewDataNascimento" />
+
 
             <TextView
                 android:id="@+id/textViewDescricao"
@@ -213,15 +159,15 @@
                 android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:text="Descrição (Experiências Profissionais.)"
                 android:inputType="text|textCapSentences"
+                android:text="Descrição (Experiências Profissionais.)"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewFormasDePagamento"
                 app:layout_constraintEnd_toEndOf="@+id/textViewFormasDePagamento"
                 app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="@+id/textViewFormasDePagamento"
-                app:layout_constraintTop_toBottomOf="@+id/textViewConfirmarSenha" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
             <TextView
                 android:id="@+id/textViewFormasDePagamento"
@@ -331,4 +277,4 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
