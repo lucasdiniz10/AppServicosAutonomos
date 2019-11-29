@@ -313,7 +313,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
 
         bdRef.child("profissional").push().setValue(profissional);
 
-        Intent intent = new Intent(FormCadastroProfissional.this, PerfilProfissional.class);
+        Intent intent = new Intent(FormCadastroProfissional.this, EditarPerfilProfissional.class);
         intent.putExtra("dados", profissional);
         startActivity(intent);
     }

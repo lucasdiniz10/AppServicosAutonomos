@@ -13,7 +13,7 @@ import com.example.servicosautonomos.classesbasicas.Profissional;
 public class EditarPerfilProfissional extends AppCompatActivity {
 
     TextView nome, telefone, cpf, endereco, dataNasc, email, servicoOferecido, descricao, dinheiro, cartaoCredito, cartaoDebito;
-    Button button;
+    Button buttonEditar, buttonDeletar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public class EditarPerfilProfissional extends AppCompatActivity {
         telefone = findViewById(R.id.textViewTelefone);
         cpf = findViewById(R.id.textViewCpf);
         dataNasc = findViewById(R.id.textViewDataNascimento);
-        email = findViewById(R.id.textViewEmail);
         endereco = findViewById(R.id.textViewEndereco);
+        email = findViewById(R.id.textViewEmail);
         servicoOferecido = findViewById(R.id.textViewServicosOferecidos);
         dinheiro = findViewById(R.id.textViewPagamentoDinheiro);
         cartaoCredito = findViewById(R.id.textViewPagamentoCredito);
@@ -36,8 +36,9 @@ public class EditarPerfilProfissional extends AppCompatActivity {
 
         nome.setText(profissional.nome);
         telefone.setText(profissional.telefone);
-        endereco.setText(profissional.endereco);
+        cpf.setText(profissional.cpf);
         dataNasc.setText(profissional.dataNasc);
+        endereco.setText(profissional.endereco);
         email.setText(profissional.email);
         servicoOferecido.setText(profissional.categoria);
         descricao.setText(profissional.descricao);
@@ -54,7 +55,6 @@ public class EditarPerfilProfissional extends AppCompatActivity {
             cartaoCredito.setTextColor(Color.parseColor("#cecece"));
         }
 
-        button = findViewById(R.id.buttonFinalizarCadastro);
 
     }
 }
