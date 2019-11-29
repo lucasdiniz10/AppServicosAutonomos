@@ -30,8 +30,11 @@ public class ListaDeServicos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_de_servicos);
 
+        //Pede a permissão para acessar a localização do usuário
         geoLocationPermission();
 
+
+        //referenciar qual serviço foi solicitado pelo usuário
         button = findViewById(R.id.aparelhosEletronic);
 
         button.setOnClickListener(new View.OnClickListener() {

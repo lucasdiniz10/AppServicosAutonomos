@@ -13,7 +13,10 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.provider.MediaStore;
+=======
+>>>>>>> bed33900e73b0c912164df1cf4236bd10044afc0
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -169,6 +172,12 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     editTextTelefone.setError("Campo obrigatório");
                     editTextTelefone.requestFocus();
                     return;
+                }
+                /*
+                if (telefone.isEmpty()) {
+                    editTextTelefone.setError("Campo obrigatório");
+                    editTextTelefone.requestFocus();
+                    return;
                 } else if (!telefone.matches("9?[6-9][0-9]{3}[0-9]{4}")){
                     editTextTelefone.setError("Número inválido");
                     editTextTelefone.requestFocus();
@@ -181,6 +190,13 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     return;
                 } else if (cpf.length() != 11){
                     editTextCpf.setError("Deve ter 11 números");
+                    editTextCpf.requestFocus();
+                    return;
+                }
+                 */
+
+                if (cpf.isEmpty()) {
+                    editTextCpf.setError("Campo obrigatório");
                     editTextCpf.requestFocus();
                     return;
                 }
@@ -479,7 +495,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
 
         bdRef.child("profissional").push().setValue(profissional);
 
-        Intent intent = new Intent(FormCadastroProfissional.this, PerfilProfissional.class);
+        Intent intent = new Intent(FormCadastroProfissional.this, EditarPerfilProfissional.class);
         intent.putExtra("dados", profissional);
         startActivity(intent);
     }

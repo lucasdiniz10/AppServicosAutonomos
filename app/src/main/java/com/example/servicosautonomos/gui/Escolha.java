@@ -18,7 +18,7 @@ public class Escolha extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolha);
 
-        button = (Button)findViewById(R.id.buttonContratarProfissional);
+        button = findViewById(R.id.buttonContratarProfissional);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +28,7 @@ public class Escolha extends AppCompatActivity {
             }
         });
 
-        button2 = (Button)findViewById(R.id.buttonCadastrarServico);
+        button2 = findViewById(R.id.buttonCadastrarServico);
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +38,7 @@ public class Escolha extends AppCompatActivity {
             }
         });
 
-        button3 = (Button)findViewById(R.id.buttonJaCadastrado);
+        button3 = findViewById(R.id.buttonJaCadastrado);
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override

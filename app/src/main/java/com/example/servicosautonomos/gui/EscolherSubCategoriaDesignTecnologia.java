@@ -18,10 +18,11 @@ public class EscolherSubCategoriaDesignTecnologia extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_sub_categoria_design_tecnologia);
 
-        button = (Button)findViewById(R.id.buttonEscolherSubCategoriaTecnologia);
+        button = findViewById(R.id.buttonEscolherSubCategoriaTecnologia);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -32,8 +33,8 @@ public class EscolherSubCategoriaDesignTecnologia extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "Tecnologia";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;
@@ -44,10 +45,11 @@ public class EscolherSubCategoriaDesignTecnologia extends AppCompatActivity {
             }
         });
 
-        button2 = (Button)findViewById(R.id.buttonEscolherSubCategoriaGrafica);
+        button2 = findViewById(R.id.buttonEscolherSubCategoriaGrafica);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -58,8 +60,8 @@ public class EscolherSubCategoriaDesignTecnologia extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "Gráfica";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;
@@ -70,10 +72,11 @@ public class EscolherSubCategoriaDesignTecnologia extends AppCompatActivity {
             }
         });
 
-        button3 = (Button)findViewById(R.id.buttonEscolherSubCategoriaAudioVisual);
+        button3 = findViewById(R.id.buttonEscolherSubCategoriaAudioVisual);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -84,8 +87,8 @@ public class EscolherSubCategoriaDesignTecnologia extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "Áudio/Visual";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;

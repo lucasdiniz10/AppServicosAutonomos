@@ -46,7 +46,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private boolean mLocationPermissionsGranted = true;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     ArrayList<Profissional> profissionalLista = new ArrayList<>();
-    private static final float DEFAULT_ZOOM = 13f;
+    private static final float DEFAULT_ZOOM = 14f;
     private static final String TAG = "MapsActivity";
     Button button;
 
@@ -84,6 +84,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         FirebaseDatabase.getInstance().getReference("profissional").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //Lista de todos profissionais
                 profissionalLista.clear();
                 List<String> keys = new ArrayList<>();
                 for (DataSnapshot key : dataSnapshot.getChildren()) {
@@ -91,67 +92,70 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Profissional profissional = key.getValue(Profissional.class);
                     profissionalLista.add(profissional);
                 }
+
                 final int size = profissionalLista.size();
                 int cont = 0;
 
+                //while que passa por cada profissional e confere se ele foi do serviço escolhido na activity anterior.
                 do {
                     final ReferenciaBotao referenciaBotao = getIntent().getExtras().getParcelable("Referencia");
 
-                    if(referenciaBotao.aparelhosEletronicos == true){
+                    if(referenciaBotao.aparelhosEletronicos){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("aparelhosEletronicos")){
+                            //função que coloca os marcadores
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.eletrodomensticos == true){
+                    if(referenciaBotao.eletrodomensticos){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("eletrodomesticos")){
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.informaticaTelefonia == true){
+                    if(referenciaBotao.informaticaTelefonia){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("Informática e Telefonia")){
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.funilariaPintura == true){
+                    if(referenciaBotao.funilariaPintura){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("Funilária e Pintura")){
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.vidracariaAutomotiva == true){
+                    if(referenciaBotao.vidracariaAutomotiva){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("Vidraçaria Automotiva")){
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.construcao == true){
+                    if(referenciaBotao.construcao){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("Construção")){
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.servicosGerais == true){
+                    if(referenciaBotao.servicosGerais){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("Serviços Gerais")){
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.tecnologia == true){
+                    if(referenciaBotao.tecnologia){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("Tecnologia")){
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.grafica == true){
+                    if(referenciaBotao.grafica){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("Gráfica")){
                             putMarker(profissa);
                         }
                     }
-                    if(referenciaBotao.audioVisual == true){
+                    if(referenciaBotao.audioVisual){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("Áudio/Visual")){
                             putMarker(profissa);
@@ -161,7 +165,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     cont++;
                 }while (cont < size);
 
-
+                //setOnClick que manda os dados do marker escolhido para a activity do perfil
                 mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                     @Override
                     public void onInfoWindowClick(Marker marker) {
