@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/appsa_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".gui.EditarPerfilProfissional"></activity>
         <activity android:name=".gui.ListaDeServicos" />
         <activity android:name=".gui.EscolherSubCategoriaDesignTecnologia" />
         <activity android:name=".gui.EscolherSubCategoriaReformasReparos" />
