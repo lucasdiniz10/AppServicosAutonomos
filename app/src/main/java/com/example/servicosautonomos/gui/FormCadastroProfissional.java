@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -130,6 +129,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     return;
                 }
 
+                /*
                 if (telefone.isEmpty()) {
                     editTextTelefone.setError("Campo obrigatório");
                     editTextTelefone.requestFocus();
@@ -149,6 +149,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     editTextCpf.requestFocus();
                     return;
                 }
+                 */
 
                 if (dataNascimento.isEmpty()) {
                     editTextDataNascimento.setError("Campo obrigatório");
