@@ -6,22 +6,33 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servicosautonomos.R;
 import com.example.servicosautonomos.classesbasicas.Profissional;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class PerfilProfissional extends AppCompatActivity {
 
     TextView nome, telefone, endereco, dataNasc, email, servicoOferecido, descricao, dinheiro, cartaoCredito, cartaoDebito;
-    Button button;
+    Button button1, button2;
+    ImageView imageViewFotoProfissional;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_profissional);
+
+        //acessando o firebase
+        FirebaseApp.initializeApp(PerfilProfissional.this);
+        FirebaseDatabase bd = FirebaseDatabase.getInstance();
+        final DatabaseReference bdRef = bd.getReference();
+        FirebaseDatabase.getInstance().getReference("profissional");
 
         final Profissional profissional = getIntent().getExtras().getParcelable("dados");
 
@@ -56,9 +67,9 @@ public class PerfilProfissional extends AppCompatActivity {
             cartaoCredito.setTextColor(Color.parseColor("#cecece"));
         }
 
-        button = findViewById(R.id.buttonFinalizarCadastro);
+        button1 = findViewById(R.id.buttonAddContato);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
@@ -73,6 +84,16 @@ public class PerfilProfissional extends AppCompatActivity {
                         .putExtra(ContactsContract.Intents.Insert.PHONE, mPhoneNumber)
                         .putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_WORK);
                 startActivity(intent);
+            }
+        });
+
+        button2 = findViewById(R.id.buttonEditar);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
             }
         });
 

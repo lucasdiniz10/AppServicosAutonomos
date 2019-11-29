@@ -384,7 +384,7 @@
                 android:inputType="text|textCapWords"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
+                app:layout_constraintBottom_toTopOf="@+id/buttonAddContato"
                 app:layout_constraintEnd_toStartOf="@+id/editTextEnderecoEstado"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/editTextEnderecoNumero"
@@ -408,7 +408,7 @@
                 app:layout_constraintVertical_bias="1.0" />
 
             <Button
-                android:id="@+id/buttonFinalizarCadastro"
+                android:id="@+id/buttonAddContato"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="200dp"
                 android:layout_height="48dp"

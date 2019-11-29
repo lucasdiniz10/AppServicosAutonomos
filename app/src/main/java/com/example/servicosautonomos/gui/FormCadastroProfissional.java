@@ -1,29 +1,47 @@
 package com.example.servicosautonomos.gui;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.provider.MediaStore;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servicosautonomos.R;
 import com.example.servicosautonomos.classesbasicas.Profissional;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class FormCadastroProfissional extends AppCompatActivity {
@@ -43,14 +61,25 @@ public class FormCadastroProfissional extends AppCompatActivity {
             "^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$";
     private static final Pattern DATA_PATTERN = Pattern.compile(DATA_REGEX);
 
-    Button buttonLogin;
+    private static final int CAMERA_REQUEST = 0;
+    private final int PICK_IMAGE = 1;
+
+    private Uri filePath;
+    private StorageReference mStorageRef;
+
+
+    Button buttonLogin, buttonAbrirCamera;
+    ImageView imageViewFotoProfissional;
+
     EditText editTextEnderecoNomeRua, editTextEnderecoNumero, editTextEnderecoBairro, editTextEnderecoCidade, editTextEnderecoEstado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_cadastro_profissional);
 
-        this.buttonLogin = findViewById(R.id.buttonFinalizarCadastro);
+        this.buttonLogin = findViewById(R.id.buttonAddContato);
+        this.buttonAbrirCamera = findViewById(R.id.buttonAbrirCamera);
+        this.imageViewFotoProfissional = findViewById(R.id.imageViewFotoProfissional);
 
         //acessando o firebase
         FirebaseApp.initializeApp(FormCadastroProfissional.this);
@@ -77,6 +106,13 @@ public class FormCadastroProfissional extends AppCompatActivity {
         });
         */
 
+        buttonAbrirCamera.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                selectImage();
+            }
+        });
+
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
 
             EditText editTextNome, editTextTelefone, editTextCpf, editTextDataNascimento, editTextEmail,
@@ -87,7 +123,6 @@ public class FormCadastroProfissional extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
                 this.editTextNome = findViewById(R.id.editTextNome);
                 this.editTextTelefone = findViewById(R.id.editTextTelefone);
                 this.editTextCpf = findViewById(R.id.editTextCpf);
@@ -164,7 +199,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     editTextEmail.setError("Campo obrigatório");
                     editTextEmail.requestFocus();
                     return;
-                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                } else if (!EMAIL_PATTERN.matcher(email).matches()){
                     editTextEmail.setError("E-mail inválido");
                     editTextEmail.requestFocus();
                     return;
@@ -184,6 +219,10 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     editTextSenha.setError("Campo obrigatório");
                     editTextSenha.requestFocus();
                     return;
+                } else if (senha.length() < 6 ) {
+                    editTextSenha.setError("Senha deve ter no mínimo 6 caracteres");
+                    editTextSenha.requestFocus();
+                    return;
                 }
 
                 if (confirmarSenha.isEmpty()) {
@@ -191,8 +230,8 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     editTextConfirmarSenha.requestFocus();
                     return;
                 } else if (!confirmarSenha.equals(senha)) {
-                    editTextConfirmarEmail.setError("Senha não coincide");
-                    editTextConfirmarEmail.requestFocus();
+                    editTextConfirmarSenha.setError("Senha não coincide");
+                    editTextConfirmarSenha.requestFocus();
                     return;
                 }
 
@@ -226,6 +265,8 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     return;
                 }
 
+                Toast.makeText(FormCadastroProfissional.this, "Profissional cadastrado com sucesso.", Toast.LENGTH_LONG).show();
+
                 Profissional profi = getIntent().getExtras().getParcelable("Categoria");
                 String categoria = profi.categoria;
                 Profissional profissional = new Profissional();
@@ -249,9 +290,6 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 profissional.senha = senha;
                 profissional.descricao = descricao;
 
-
-                Toast.makeText(FormCadastroProfissional.this, "Profissional cadastrado com sucesso.", Toast.LENGTH_LONG).show();
-
                 /*Intent intent = new Intent(FormCadastroProfissional.this, PerfilProfissional.class);
                 startActivity(intent);*/
 
@@ -261,6 +299,135 @@ public class FormCadastroProfissional extends AppCompatActivity {
             }
         });
     }
+
+    private void escolherImagemDaCamera() {
+        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, 0);
+    }
+
+    private void escolherImagemDaGaleria() {
+        try {
+            Intent intent = new Intent(Intent.ACTION_PICK,
+                    MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+            intent.setType("image/*");
+            intent.putExtra("crop", "true");
+            intent.putExtra("scale", true);
+            intent.putExtra("outputX", 256);
+            intent.putExtra("outputY", 256);
+            intent.putExtra("aspectX", 1);
+            intent.putExtra("aspectY", 1);
+            intent.putExtra("return-data", true);
+            startActivityForResult(intent, 1);
+        } catch (Exception ex) {
+            Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void selectImage() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(FormCadastroProfissional.this);
+        builder.setTitle("Obter imagem");
+        final CharSequence[] items = {"Tirar Foto", "Escolher da Galeria", "Cancelar"};
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                boolean result = Utility.checkPermission(FormCadastroProfissional.this);
+
+                switch (item) {
+                    case 0:
+                        escolherImagemDaCamera();
+                        break;
+                    case 1:
+                        escolherImagemDaGaleria();
+                        break;
+                    case 2:
+                        dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
+    }
+
+    @Override
+    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        filePath = data.getData();
+        if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
+            Bitmap mphoto = (Bitmap) data.getExtras().get("data");
+            getCroppedBitmap(mphoto);
+            imageViewFotoProfissional.setImageBitmap(mphoto);
+        }
+
+        else if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
+            if (requestCode == 1) {
+                final Bundle extras = data.getExtras();
+                if (extras != null) {
+                    //Get image
+                    Bitmap newProfilePic = extras.getParcelable("data");
+                    getCroppedBitmap(newProfilePic);
+                    imageViewFotoProfissional.setImageBitmap(newProfilePic);
+                }
+            }
+        }
+
+    }
+
+    public Bitmap getCroppedBitmap(Bitmap bitmap) {
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
+                bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        // canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+        canvas.drawCircle(bitmap.getWidth() / 2, bitmap.getHeight() / 2,
+                bitmap.getWidth() / 2, paint);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+        //Bitmap _bmp = Bitmap.createScaledBitmap(output, 60, 60, false);
+        //return _bmp;
+        return output;
+    }
+
+    private void uploadImage() {
+
+        if (filePath != null) {
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle("Uploading...");
+            progressDialog.show();
+
+            StorageReference ref = mStorageRef.child("images/" + UUID.randomUUID().toString());
+            ref.putFile(filePath)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            progressDialog.dismiss();
+                            Toast.makeText(FormCadastroProfissional.this, "Uploaded", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
+                            Toast.makeText(FormCadastroProfissional.this, "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot
+                                    .getTotalByteCount());
+                            progressDialog.setMessage("Uploaded " + (int) progress + "%");
+                        }
+                    });
+        }
+    }
+
+
     private void geoLocate(Profissional profissional){
         FirebaseApp.initializeApp(FormCadastroProfissional.this);
         FirebaseDatabase bd = FirebaseDatabase.getInstance();
