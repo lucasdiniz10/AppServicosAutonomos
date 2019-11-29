@@ -13,10 +13,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.provider.MediaStore;
-=======
->>>>>>> bed33900e73b0c912164df1cf4236bd10044afc0
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
