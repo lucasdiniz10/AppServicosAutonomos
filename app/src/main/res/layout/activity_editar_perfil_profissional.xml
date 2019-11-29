@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gui.PerfilProfissional">
-
+    tools:context=".gui.EditarPerfilProfissional">
 
     <ImageView
         android:id="@+id/imageViewFotoProfissional"
@@ -13,7 +12,7 @@
         android:layout_height="116dp"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:background="@drawable/userpic"
@@ -22,22 +21,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTituloDados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/textViewPerfil"
+        android:layout_width="330dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/bold"
-        android:text="Dados do Profissional"
+        android:text="Cadastro Profissional"
         android:textAlignment="center"
         android:textColor="#3A6A75"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewFotoProfissional"
-        app:layout_constraintVertical_bias="0.050000012" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
-        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -45,10 +45,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTituloDados">
+        app:layout_constraintTop_toBottomOf="@+id/textViewPerfil"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -58,19 +61,21 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="1dp">
 
-
             <TextView
                 android:id="@+id/textViewNome"
                 android:layout_width="295dp"
                 android:layout_height="47dp"
+                android:baselineAligned="false"
+                android:ems="10"
                 android:fontFamily="@font/regular"
-                android:text="Nome Completo"
+                android:inputType="textPersonName|textCapWords"
+                android:text="Nome"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewTelefone"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTelefone"
+                app:layout_constraintEnd_toEndOf="@+id/textViewTelefone"
                 app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@id/textViewTelefone"
+                app:layout_constraintStart_toStartOf="@+id/textViewTelefone"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -78,25 +83,29 @@
                 android:layout_width="295dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="32dp"
+                android:baselineAligned="false"
                 android:ems="10"
                 android:fontFamily="@font/regular"
-                android:inputType="phone"
-                android:text="Telefone"
+                android:inputType="text"
+                android:text="Telefone com DDD"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewEndereco"
-                app:layout_constraintEnd_toEndOf="@+id/textViewEndereco"
+                app:layout_constraintBottom_toTopOf="@+id/textViewCpf"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCpf"
                 app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@+id/textViewEndereco"
+                app:layout_constraintStart_toStartOf="@+id/textViewCpf"
                 app:layout_constraintTop_toBottomOf="@+id/textViewNome" />
 
             <TextView
-                android:id="@+id/textViewEndereco"
+                android:id="@+id/textViewCpf"
                 android:layout_width="295dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
                 android:fontFamily="@font/regular"
-                android:text="Endereço"
+                android:inputType="text"
+                android:text="Cpf"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewDataNascimento"
@@ -110,42 +119,71 @@
                 android:layout_width="295dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
                 android:fontFamily="@font/regular"
+                android:inputType="text"
                 android:text="Data de Nascimento"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewEndereco"
+                app:layout_constraintEnd_toEndOf="@+id/textViewEndereco"
+                app:layout_constraintHorizontal_bias="0.609"
+                app:layout_constraintStart_toStartOf="@+id/textViewEndereco"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCpf" />
+
+            <TextView
+                android:id="@+id/textViewEndereco"
+                android:layout_width="295dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:inputType="text"
+                android:text="Endereço"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewEmail"
                 app:layout_constraintEnd_toEndOf="@+id/textViewEmail"
                 app:layout_constraintHorizontal_bias="0.609"
                 app:layout_constraintStart_toStartOf="@+id/textViewEmail"
-                app:layout_constraintTop_toBottomOf="@+id/textViewEndereco" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewDataNascimento" />
 
             <TextView
                 android:id="@+id/textViewEmail"
                 android:layout_width="295dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
                 android:fontFamily="@font/regular"
+                android:inputType="textEmailAddress"
                 android:text="Email"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewServicosOferecidos"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDataNascimento" />
+                app:layout_constraintEnd_toEndOf="@+id/textViewServicosOferecidos"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/textViewServicosOferecidos"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEndereco" />
 
             <TextView
                 android:id="@+id/textViewServicosOferecidos"
                 android:layout_width="295dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
                 android:fontFamily="@font/regular"
+                android:inputType="text"
                 android:text="Serviços Oferecidos"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewFormasDePagamento"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/textViewDescricao"
+                app:layout_constraintEnd_toEndOf="@+id/textViewDescricao"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/textViewDescricao"
                 app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
             <TextView
@@ -153,15 +191,17 @@
                 android:layout_width="295dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
                 android:fontFamily="@font/regular"
-                android:maxLines="10"
-                android:text="Descrição"
+                android:inputType="text|textCapSentences"
+                android:text="Descrição (Experiências Profissionais.)"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewFormasDePagamento"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textViewFormasDePagamento"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="@+id/textViewFormasDePagamento"
                 app:layout_constraintTop_toBottomOf="@+id/textViewServicosOferecidos" />
 
             <TextView
@@ -176,23 +216,25 @@
                 android:textColor="#3A6A75"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewPagamentoDinheiro"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewServicosOferecidos" />
+                app:layout_constraintEnd_toEndOf="@+id/textViewPagamentoDinheiro"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="@+id/textViewPagamentoDinheiro"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescricao" />
 
             <TextView
                 android:id="@+id/textViewPagamentoDinheiro"
                 android:layout_width="292dp"
                 android:layout_height="22dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/bold"
                 android:text="Dinheiro"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewPagamentoDebito"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDescricao" />
+                app:layout_constraintEnd_toEndOf="@+id/textViewPagamentoDebito"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="@+id/textViewPagamentoDebito"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFormasDePagamento" />
 
             <TextView
                 android:id="@+id/textViewPagamentoDebito"
@@ -204,8 +246,9 @@
                 android:textColor="#000000"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewPagamentoCredito"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textViewPagamentoCredito"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="@+id/textViewPagamentoCredito"
                 app:layout_constraintTop_toBottomOf="@+id/textViewPagamentoDinheiro" />
 
             <TextView
@@ -217,52 +260,45 @@
                 android:text="Cartão de Crédito"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/buttonAddContato"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/buttonEditarPerfil"
+                app:layout_constraintEnd_toEndOf="@id/buttonEditarPerfil"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="@id/buttonEditarPerfil"
                 app:layout_constraintTop_toBottomOf="@+id/textViewPagamentoDebito" />
 
             <Button
-                android:id="@+id/buttonAddContato"
+                android:id="@+id/buttonEditarPerfil"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="69dp"
-                android:layout_marginLeft="69dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="69dp"
-                android:layout_marginRight="69dp"
                 android:background="@drawable/selector_button"
                 android:baselineAligned="false"
                 android:fontFamily="@font/bold"
                 android:shadowRadius="12"
-                android:text="Adicionar aos Contatos"
+                android:text="Editar Perfil"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.50"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/buttonDeletarPerfil"
+                app:layout_constraintEnd_toEndOf="@id/buttonDeletarPerfil"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="@id/buttonDeletarPerfil"
                 app:layout_constraintTop_toBottomOf="@+id/textViewPagamentoCredito" />
 
             <Button
-                android:id="@+id/buttonEditar"
+                android:id="@+id/buttonDeletarPerfil"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="69dp"
-                android:layout_marginLeft="69dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="69dp"
-                android:layout_marginRight="69dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/selector_button"
                 android:baselineAligned="false"
                 android:fontFamily="@font/bold"
                 android:shadowRadius="12"
-                android:text="Editar perfil"
+                android:text="Deletar Perfil"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
@@ -270,9 +306,9 @@
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonAddContato" />
+                app:layout_constraintTop_toBottomOf="@id/buttonEditarPerfil" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

@@ -106,8 +106,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAparelhosEletronicos"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.19999999" />
 
@@ -121,7 +120,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
-                app:layout_constraintHorizontal_bias="0.57"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.36" />
@@ -170,8 +168,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoEletrodomesticos"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.19999999" />
 
@@ -185,7 +182,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
-                app:layout_constraintHorizontal_bias="0.47"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.36" />
@@ -234,23 +230,20 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoInformaticaeTelefonia"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.19999999" />
 
             <TextView
                 android:id="@+id/textViewDescricaoInformaticaeTelefonia"
-                android:layout_width="374dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
-                android:gravity=""
-                android:text="Cabeamento e Redes, Celular, Computador Desktop, Impressora, Notebooks, Etc."
+                android:text="Cabeamento e Redes, Celular, Computador Desktop."
                 android:textColor="#4C4C4C"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
-                app:layout_constraintHorizontal_bias="0.62"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.36" />

@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,8 +46,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private boolean mLocationPermissionsGranted = true;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     ArrayList<Profissional> profissionalLista = new ArrayList<>();
-    private static final float DEFAULT_ZOOM = 13f;
+    private static final float DEFAULT_ZOOM = 14f;
     private static final String TAG = "MapsActivity";
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +84,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         FirebaseDatabase.getInstance().getReference("profissional").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //Lista de todos profissionais
                 profissionalLista.clear();
                 List<String> keys = new ArrayList<>();
                 for (DataSnapshot key : dataSnapshot.getChildren()) {
@@ -88,84 +92,118 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Profissional profissional = key.getValue(Profissional.class);
                     profissionalLista.add(profissional);
                 }
-                int size = profissionalLista.size();
+
+                final int size = profissionalLista.size();
                 int cont = 0;
 
+                //while que passa por cada profissional e confere se ele foi do serviço escolhido na activity anterior.
                 do {
                     final ReferenciaBotao referenciaBotao = getIntent().getExtras().getParcelable("Referencia");
 
-                    if(referenciaBotao.aparelhosEletronicos == true){
+                    if(referenciaBotao.aparelhosEletronicos){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("aparelhosEletronicos")){
-                            Double lat = profissa.latitude;
-                            Double lon = profissa.longitude;
-
-                            LatLng latLng = new LatLng(lat,lon);
-
-                            MarkerOptions options = new MarkerOptions()
-                                    .position(latLng)
-                                    .title(profissa.nome)
-                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
-                            mMap.addMarker(options);
-
-                            float zoom = DEFAULT_ZOOM;
-
-                            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                                @Override
-                                public void onInfoWindowClick(Marker marker) {
-                                    int i = 1;
-                                    Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
-                                    i += 1;
-
-                                    Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
-                                    intent.putExtra("dados", profissa);
-                                    startActivity(intent);
-                                }
-                            });
+                            //função que coloca os marcadores
+                            putMarker(profissa);
                         }
-
                     }
-                    if(referenciaBotao.eletrodomensticos == true){
+                    if(referenciaBotao.eletrodomensticos){
                         final Profissional profissa = (Profissional) profissionalLista.get(cont);
                         if (profissa.categoria.equals("eletrodomesticos")){
-                            Double lat = profissa.latitude;
-                            Double lon = profissa.longitude;
-
-                            LatLng latLng = new LatLng(lat,lon);
-
-                            MarkerOptions options = new MarkerOptions()
-                                    .position(latLng)
-                                    .title(profissa.nome)
-                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
-                            mMap.addMarker(options);
-
-                            float zoom = DEFAULT_ZOOM;
-
-                            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                                @Override
-                                public void onInfoWindowClick(Marker marker) {
-                                    int i = 1;
-                                    Toast.makeText(MapsActivity.this, "Test " + i, Toast.LENGTH_SHORT).show();
-                                    i += 1;
-
-                                    Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
-                                    intent.putExtra("dados", profissa);
-                                    startActivity(intent);
-                                }
-                            });
+                            putMarker(profissa);
                         }
-
+                    }
+                    if(referenciaBotao.informaticaTelefonia){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Informática e Telefonia")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.funilariaPintura){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Funilária e Pintura")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.vidracariaAutomotiva){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Vidraçaria Automotiva")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.construcao){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Construção")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.servicosGerais){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Serviços Gerais")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.tecnologia){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Tecnologia")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.grafica){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Gráfica")){
+                            putMarker(profissa);
+                        }
+                    }
+                    if(referenciaBotao.audioVisual){
+                        final Profissional profissa = (Profissional) profissionalLista.get(cont);
+                        if (profissa.categoria.equals("Áudio/Visual")){
+                            putMarker(profissa);
+                        }
                     }
 
                     cont++;
                 }while (cont < size);
 
+                //setOnClick que manda os dados do marker escolhido para a activity do perfil
+                mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                    @Override
+                    public void onInfoWindowClick(Marker marker) {
+                        int cont2 = 0;
+                        int size1 = profissionalLista.size();
+                        do {
+                            Profissional profissa =  profissionalLista.get(cont2);
+
+                            if (marker.getTitle().equals(profissa.nome)){
+                                Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(MapsActivity.this, PerfilProfissional.class);
+                                intent.putExtra("dados", profissa);
+                                startActivity(intent);
+                            }
+                            cont2++;
+                        }while (cont2 < size1);
+                    }
+                });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+    }
+
+    private void putMarker(final Profissional profissional){
+        Double lat = profissional.latitude;
+        Double lon = profissional.longitude;
+
+        LatLng latLng = new LatLng(lat,lon);
+
+        final MarkerOptions options = new MarkerOptions()
+                .position(latLng)
+                .title(profissional.nome)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin));
+        mMap.addMarker(options);
+
     }
 
     private void getDeviceLocation(){
@@ -182,10 +220,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onComplete(@NonNull Task task) {
                         if(task.isSuccessful()){
                             Log.d(TAG, "onComplete: found location!");
-                            Location currentLocation = (Location) task.getResult();
+                            final Location currentLocation = (Location) task.getResult();
 
                             moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
                                     DEFAULT_ZOOM);
+
+                            button = findViewById(R.id.buttonCentralizar);
+
+                            button.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
+                                            DEFAULT_ZOOM);
+                                }
+                            });
 
                         }else{
                             Log.d(TAG, "onComplete: current location is null");

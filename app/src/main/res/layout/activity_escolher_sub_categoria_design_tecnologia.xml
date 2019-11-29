@@ -103,8 +103,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoTecnologia"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.19999999" />
 
@@ -118,7 +117,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria"
-                app:layout_constraintHorizontal_bias="0.57"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria"
                 app:layout_constraintVertical_bias="0.36" />
@@ -166,8 +164,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoGrafica"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.19999999" />
 
@@ -181,7 +178,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria2"
-                app:layout_constraintHorizontal_bias="0.47"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria2"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria2"
                 app:layout_constraintVertical_bias="0.36" />
@@ -230,8 +226,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescricaoAudioVisual"
+                app:layout_constraintStart_toStartOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.19999999" />
 
@@ -246,7 +241,6 @@
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintEnd_toEndOf="@id/imageViewBaseSubCategoria3"
-                app:layout_constraintHorizontal_bias="0.37"
                 app:layout_constraintStart_toStartOf="@+id/imageViewBaseSubCategoria3"
                 app:layout_constraintTop_toTopOf="@id/imageViewBaseSubCategoria3"
                 app:layout_constraintVertical_bias="0.36" />

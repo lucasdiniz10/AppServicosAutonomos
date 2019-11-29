@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gui.FormCadastroProfissional">
+    tools:context=".gui.AlterarDadosProfissional">
 
     <ImageView
         android:id="@+id/imageViewFotoProfissional"
@@ -56,7 +56,7 @@
         android:layout_width="330dp"
         android:layout_height="31dp"
         android:fontFamily="@font/bold"
-        android:text="Cadastro Profissional"
+        android:text="Edite Seus Dados"
         android:textAlignment="center"
         android:textColor="#3A6A75"
         android:textSize="20sp"
@@ -387,7 +387,7 @@
                 android:inputType="text|textCapWords"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/buttonAddContato"
+                app:layout_constraintBottom_toTopOf="@+id/buttonFinalizarCadastro"
                 app:layout_constraintEnd_toStartOf="@+id/editTextEnderecoEstado"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/editTextEnderecoNumero"
@@ -411,7 +411,7 @@
                 app:layout_constraintVertical_bias="1.0" />
 
             <Button
-                android:id="@+id/buttonAddContato"
+                android:id="@+id/buttonFinalizarCadastro"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
@@ -424,7 +424,7 @@
                 android:baselineAligned="false"
                 android:fontFamily="@font/bold"
                 android:shadowRadius="12"
-                android:text="Finalizar Cadastro"
+                android:text="Salvar Dados"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"

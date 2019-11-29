@@ -18,11 +18,12 @@ public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_sub_categoria_assistencia_tecnica);
 
-        button = (Button)findViewById(R.id.buttonEscolherSubCategoriaDescricaoAparelhosEletronicos);
+        button = findViewById(R.id.buttonEscolherSubCategoriaDescricaoAparelhosEletronicos);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -33,8 +34,8 @@ public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
                 profissional.descricao = "0";
                 profissional.endereco = "0";
                 profissional.categoria = "aparelhosEletronicos";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;
@@ -45,11 +46,12 @@ public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
             }
         });
 
-        button2 = (Button)findViewById(R.id.buttonEscolherSubCategoriaEletrodomesticos);
+        button2 = findViewById(R.id.buttonEscolherSubCategoriaEletrodomesticos);
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
                 Profissional profissional = new Profissional();
                 profissional.nome = "0";
                 profissional.telefone = "0";
@@ -60,8 +62,8 @@ public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
                 profissional.endereco = "0";
                 profissional.descricao = "0";
                 profissional.categoria = "eletrodomesticos";
-                profissional.latitude = Double.valueOf(0);
-                profissional.longitude = Double.valueOf(0);
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
                 profissional.dinheiro = true;
                 profissional.cartaoDebito = true;
                 profissional.cartaoCredito = true;
@@ -72,12 +74,30 @@ public class EscolherSubCategoriaAssistenciaTecnica extends AppCompatActivity {
             }
         });
 
-        button3 = (Button)findViewById(R.id.buttonEscolherSubCategoriaInformaticaeTelefonia);
+        button3 = findViewById(R.id.buttonEscolherSubCategoriaInformaticaeTelefonia);
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Referenciando a categoria escolhida, e enviando pelo Parcelable
+                Profissional profissional = new Profissional();
+                profissional.nome = "0";
+                profissional.telefone = "0";
+                profissional.cpf = "0";
+                profissional.dataNasc = "0";
+                profissional.email = "0";
+                profissional.senha = "0";
+                profissional.endereco = "0";
+                profissional.descricao = "0";
+                profissional.categoria = "Informática e Telefonia";
+                profissional.latitude = (double) 0;
+                profissional.longitude = (double) 0;
+                profissional.dinheiro = true;
+                profissional.cartaoDebito = true;
+                profissional.cartaoCredito = true;
+
                 Intent intent = new Intent(EscolherSubCategoriaAssistenciaTecnica.this, FormCadastroProfissional.class);
+                intent.putExtra("Categoria", profissional);
                 startActivity(intent);
             }
         });

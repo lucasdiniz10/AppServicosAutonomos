@@ -7,6 +7,9 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +18,9 @@
         android:roundIcon="@mipmap/appsa_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".gui.ListaDeServicos"></activity>
+        <activity android:name=".gui.AlterarDadosProfissional"></activity>
+        <activity android:name=".gui.EditarPerfilProfissional" />
+        <activity android:name=".gui.ListaDeServicos" />
         <activity android:name=".gui.EscolherSubCategoriaDesignTecnologia" />
         <activity android:name=".gui.EscolherSubCategoriaReformasReparos" />
         <!--
