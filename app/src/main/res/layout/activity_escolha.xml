@@ -64,7 +64,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="65dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="@font/bold"
                 android:text="Já Sou Cadastrado."
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -75,7 +76,7 @@
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonContratarProfissional"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.51" />
 
             <ImageView
                 android:id="@+id/imgMiniLogo"
@@ -107,7 +108,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="29dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/selector_button"
                 android:fontFamily="@font/bold"
                 android:shadowRadius="12"
