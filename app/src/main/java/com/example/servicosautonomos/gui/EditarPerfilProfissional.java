@@ -1,7 +1,9 @@
 package com.example.servicosautonomos.gui;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -55,6 +57,27 @@ public class EditarPerfilProfissional extends AppCompatActivity {
             cartaoCredito.setTextColor(Color.parseColor("#cecece"));
         }
 
+
+        buttonEditar = findViewById(R.id.buttonEditarPerfil);
+
+        buttonEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EditarPerfilProfissional.this, AlterarDadosProfissional.class);
+                startActivity(intent);
+            }
+        });
+
+
+        buttonDeletar = findViewById(R.id.buttonDeletarPerfil);
+
+        // FALTA AQUI
+        buttonDeletar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 }

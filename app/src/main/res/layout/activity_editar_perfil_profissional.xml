@@ -162,12 +162,29 @@
                 android:text="Email"
                 android:textColor="#000000"
                 android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewServicosOferecidos"
+                app:layout_constraintEnd_toEndOf="@+id/textViewServicosOferecidos"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/textViewServicosOferecidos"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEndereco" />
+
+            <TextView
+                android:id="@+id/textViewServicosOferecidos"
+                android:layout_width="295dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:ems="10"
+                android:fontFamily="@font/regular"
+                android:inputType="text"
+                android:text="Serviços Oferecidos"
+                android:textColor="#000000"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewDescricao"
                 app:layout_constraintEnd_toEndOf="@+id/textViewDescricao"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/textViewDescricao"
-                app:layout_constraintTop_toBottomOf="@+id/textViewEndereco" />
-
+                app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
             <TextView
                 android:id="@+id/textViewDescricao"
@@ -185,7 +202,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/textViewFormasDePagamento"
                 app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="@+id/textViewFormasDePagamento"
-                app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewServicosOferecidos" />
 
             <TextView
                 android:id="@+id/textViewFormasDePagamento"

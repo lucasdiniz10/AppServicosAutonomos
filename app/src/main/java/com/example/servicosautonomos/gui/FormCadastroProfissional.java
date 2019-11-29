@@ -129,6 +129,11 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     return;
                 }
 
+                if (telefone.isEmpty()) {
+                    editTextTelefone.setError("Campo obrigatório");
+                    editTextTelefone.requestFocus();
+                    return;
+                }
                 /*
                 if (telefone.isEmpty()) {
                     editTextTelefone.setError("Campo obrigatório");
@@ -150,6 +155,12 @@ public class FormCadastroProfissional extends AppCompatActivity {
                     return;
                 }
                  */
+
+                if (cpf.isEmpty()) {
+                    editTextCpf.setError("Campo obrigatório");
+                    editTextCpf.requestFocus();
+                    return;
+                }
 
                 if (dataNascimento.isEmpty()) {
                     editTextDataNascimento.setError("Campo obrigatório");
