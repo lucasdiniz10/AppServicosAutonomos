@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
@@ -315,6 +316,13 @@ public class FormCadastroProfissional extends AppCompatActivity {
 
     private void escolherImagemDaCamera() {
         Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraIntent.putExtra("crop", "true");
+        cameraIntent.putExtra("scale", true);
+        cameraIntent.putExtra("outputX", 256);
+        cameraIntent.putExtra("outputY", 256);
+        cameraIntent.putExtra("aspectX", 1);
+        cameraIntent.putExtra("aspectY", 1);
+        cameraIntent.putExtra("return-data", true);
         startActivityForResult(cameraIntent, 0);
     }
 
@@ -366,8 +374,8 @@ public class FormCadastroProfissional extends AppCompatActivity {
         filePath = data.getData();
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
             Bitmap mphoto = (Bitmap) data.getExtras().get("data");
-            getCroppedBitmap(mphoto);
-            imageViewFotoProfissional.setImageBitmap(mphoto);
+            GetBitmapClippedCircle(mphoto);
+            imageViewFotoProfissional.setImageBitmap(GetBitmapClippedCircle(mphoto));
         }
 
         else if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
@@ -376,34 +384,31 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 if (extras != null) {
                     //Get image
                     Bitmap newProfilePic = extras.getParcelable("data");
-                    getCroppedBitmap(newProfilePic);
-                    imageViewFotoProfissional.setImageBitmap(newProfilePic);
+                    GetBitmapClippedCircle(newProfilePic);
+                    imageViewFotoProfissional.setImageBitmap(GetBitmapClippedCircle(newProfilePic));
                 }
             }
         }
 
     }
 
-    public Bitmap getCroppedBitmap(Bitmap bitmap) {
-        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
-                bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(output);
+    public static Bitmap GetBitmapClippedCircle(Bitmap bitmap) {
 
-        final int color = 0xff424242;
-        final Paint paint = new Paint();
-        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final int width = bitmap.getWidth();
+        final int height = bitmap.getHeight();
+        final Bitmap outputBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 
-        paint.setAntiAlias(true);
-        canvas.drawARGB(0, 0, 0, 0);
-        paint.setColor(color);
-        // canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
-        canvas.drawCircle(bitmap.getWidth() / 2, bitmap.getHeight() / 2,
-                bitmap.getWidth() / 2, paint);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(bitmap, rect, rect, paint);
-        //Bitmap _bmp = Bitmap.createScaledBitmap(output, 60, 60, false);
-        //return _bmp;
-        return output;
+        final Path path = new Path();
+        path.addCircle(
+                (float)(width / 2)
+                , (float)(height / 2)
+                , (float) Math.min(width, (height / 2))
+                , Path.Direction.CCW);
+
+        final Canvas canvas = new Canvas(outputBitmap);
+        canvas.clipPath(path);
+        canvas.drawBitmap(bitmap, 0, 0, null);
+        return outputBitmap;
     }
 
     private void uploadImage() {
