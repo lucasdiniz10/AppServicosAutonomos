@@ -247,32 +247,6 @@
                 app:layout_constraintHorizontal_bias="0.50"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewPagamentoCredito" />
-
-            <Button
-                android:id="@+id/buttonEditar"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="69dp"
-                android:layout_marginLeft="69dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="69dp"
-                android:layout_marginRight="69dp"
-                android:background="@drawable/selector_button"
-                android:baselineAligned="false"
-                android:fontFamily="@font/bold"
-                android:shadowRadius="12"
-                android:text="Editar perfil"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonAddContato" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

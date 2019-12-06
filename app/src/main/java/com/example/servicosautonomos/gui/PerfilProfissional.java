@@ -87,15 +87,5 @@ public class PerfilProfissional extends AppCompatActivity {
             }
         });
 
-        button2 = findViewById(R.id.buttonEditar);
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
     }
 }
